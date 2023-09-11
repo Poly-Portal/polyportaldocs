@@ -1,8 +1,8 @@
 # API Documentation
 
-Poly Portal uses a REST style API to communicate between server and client. Outbound content (from the server to the client) is retrieved via `GET` request and inbound content (from the client to the server) is delivered via a `POST` request`*`.
+Poly Portal uses a REST style API to communicate between server and client. Outbound content (from the server to the client) is retrieved via `GET` request and inbound content (from the client to the server) is delivered via a `POST` request.
 
-`*` There is additional complexity around file uploads. This is explained in the relevant sections.
+* There is additional complexity around file uploads. This is explained in the relevant sections.
 
 ## Overview
 
