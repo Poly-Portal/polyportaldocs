@@ -137,12 +137,39 @@ Only artworks with files created after the specified ISO 8601 date-time will be 
 **Allowed values:** An ISO 8601 date-time.
 ___
 
+### `tags`
+
+Specifies the tags that should be matched. See the `tagMatchingStrategy` parameter to select if results must match either all of the tags or just one or more (defaults to any).
+
+**Example:**
+`artwork/list?tags=["animals","cars"]`
+
+**Allowed values:** A JSON style list of strings.
+___
+
+### `tagMatchingStrategy`
+
+Specifies the matching criteria for tags. If this parameter is used you must also specify the `tags` parameter.
+
+* `all`: Will only return artworks that have all of the tags specified
+* `any`: Will only return artworks that have at least one of the tags specified.
+
+Default = `any`.
+
+**Example:** `artwork/list?tagMatchingStrategy=all`
+
+**Allowed values:** `any` or `all`.
+
+___
+
 ## Example Responses
 
 ### On Success
 
 **Query:** `artwork/list?pageSize=3&page=2&sortOrder=lexicographical`
-```
+
+**Result:**
+```json
 {
   "ok":true,
   "pageSize":3,
@@ -163,6 +190,10 @@ ___
           "sha256":"4b1a5c87adc45123a290be68575072c880fa17e68c3b9e6cc74bbf16be5095c6",
           "extension":"fbx"
         }
+      ],
+      "tags":[
+        "Animal",
+        "Land animal"
       ]
     },
     {
@@ -175,6 +206,9 @@ ___
           "sha256":"dde91fcdf38dc7e38739c99c1a873ed3979327d49d2f0e45e09a81417b4a3806",
           "extension":"fbx"
         }
+      ],
+      "tags":[
+        "tags aren't always useful"
       ]
     },
     {
@@ -187,7 +221,8 @@ ___
           "sha256":"e7070285bc228a6efc71835794f0f80b1181c2d8e30d48fe8ec733c7e2ee509e",
           "extension":"fbx"
         }
-      ]
+      ],
+      "tags":[]
     }
   ]
 }
@@ -202,7 +237,9 @@ ___
 ### On Error
 
 **Query:** `artwork/list?sortOrder=WRONG`
-```
+
+**Result:**
+```json
 {
   "ok":false,
   "error":"invalidParameterValue",

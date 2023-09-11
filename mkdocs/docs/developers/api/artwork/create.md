@@ -70,6 +70,25 @@ Specifies the description of the artwork. The default description is `""` (empty
 
 ___
 
+### `tags`
+
+Specifies the tags for the artwork. The default is to have no tags.
+
+**Example:**
+```json
+{
+    "tags":[
+      "wildlife",
+      "animals",
+      "nature"
+    ]
+}
+```
+
+**Allowed values:** A list of strings.
+
+___
+
 
 ## Example Responses
 

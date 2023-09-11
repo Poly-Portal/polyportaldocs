@@ -88,6 +88,25 @@ Specifies the description of the artwork.
 
 ___
 
+### `tags`
+
+Specifies the tags for the artwork. If this parameter is not specified than the tags will not be changed. Using this argument will remove any tags that do not appear in the list. 
+
+**Example:**
+```json
+{
+  "tags":[
+    "wildlife",
+    "animals",
+    "nature"
+  ]
+}
+```
+
+**Allowed values:** A list of strings.
+
+___
+
 
 ## Example Responses
 
@@ -100,7 +119,11 @@ ___
 {
   "artworkID":12477,
   "title":"This is the updated title",
-  "description":"This is the new description"
+  "description":"This is the new description",
+  "tags":[
+    "updated tags",
+    "old ones not in this list will be removed"
+  ]
 }
 
 ```
