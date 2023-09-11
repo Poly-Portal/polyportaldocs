@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>POST artwork/update - Poly Portal Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "POST artwork/update";
+        var mkdocs_page_input_path = "developers/api/artwork/update.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Poly Portal Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">PolyPortal User Manual and Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Administrators</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../administrators/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../../">Developer Documentation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Api</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">API Documentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">3DFile</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../3DFile/create/">POST 3DFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../3DFile/remove/">POST 3DFile/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../3DFile/upload/">POST 3DFile/upload</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Artwork</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../create/">POST artwork/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../list/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../remove/">POST artwork/remove</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">POST artwork/update</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description-and-usage">Description and Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#key-information">Key information</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#required-arguments">Required Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-arguments-include-at-least-one">Optional Arguments (include at least one)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-responses">Example Responses</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#errors">Errors</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">User</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../user/login/">Login</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../user/logout/">Logout</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../user/register/">Register</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Users</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../users/">Index</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Poly Portal Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Developers &raquo;</li>
+          <li>Api &raquo;</li>
+          <li>Artwork &raquo;</li>
+      <li class="breadcrumb-item active">POST artwork/update</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="post-artworkupdate"><code>POST</code> artwork/update</h1>
+<h2 id="description-and-usage">Description and Usage</h2>
+<p>May be used to change the title of an artwork, modify the description, and/or update what 3D files are associated with the artwork.</p>
+<p><strong>At least one of the optional arguments must be specified.</strong></p>
+<p><strong>Arguments must be sent in the message body as valid JSON.</strong></p>
+<h2 id="key-information">Key information</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method</td>
+<td><code>POST</code></td>
+</tr>
+<tr>
+<td>Token</td>
+<td>User token</td>
+</tr>
+<tr>
+<td>HTTP content type</td>
+<td><code>application/json</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="required-arguments">Required Arguments</h2>
+<hr />
+<h3 id="artworkid"><code>artworkID</code></h3>
+<p>The ID of the artwork to be updated. The user must have permissions over the artwork specified.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;artworkID&quot;:4672
+}
+</code></pre>
+<p><strong>Allowed values:</strong> An artwork ID.</p>
+<hr />
+<h2 id="optional-arguments-include-at-least-one">Optional Arguments (include at least one)</h2>
+<hr />
+<h3 id="title"><code>title</code></h3>
+<p>Specifies the title of the artwork.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;title&quot;:&quot;Hyper-Realistic Schweppes Lemonade Can&quot;
+}
+</code></pre>
+<p><strong>Allowed values:</strong> any string.</p>
+<hr />
+<h3 id="3dfiles"><code>3DFiles</code></h3>
+<p>Specifies the files included in this artwork. The files may already be included in the artwork or they may be files not included in any artwork. The files must not be included in any <em>other</em> artwork and must be owned by the user. The updated list of files must not be identical to the current list of files - if the files are not being updated do not use this argument.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;3DFiles&quot;:[
+    &quot;2ba58048d97a6adefa8089b60322933489d07ba0b58f6528a07980142a7ccf5c&quot;,
+    &quot;fcd91acd1fe9e861082e5a6346ad430feb6c14452308cf79e515a1906fa3b22d&quot;
+  ]
+}
+</code></pre>
+<p><strong>Allowed values:</strong> A list of valid file references. See above.</p>
+<hr />
+<h3 id="description"><code>description</code></h3>
+<p>Specifies the description of the artwork.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+    &quot;description&quot;:&quot;Writing descriptions is hard.&quot;
+}
+</code></pre>
+<p><strong>Allowed values:</strong> any string.</p>
+<hr />
+<h2 id="example-responses">Example Responses</h2>
+<h3 id="on-success">On Success</h3>
+<p><strong>Request:</strong> <code>POST artwork/create</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;artworkID&quot;:12477,
+  &quot;title&quot;:&quot;This is the updated title&quot;,
+  &quot;description&quot;:&quot;This is the new description&quot;
+}
+
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:true
+}
+</code></pre>
+<h3 id="on-error">On Error</h3>
+<p><strong>Request:</strong> <code>POST artwork/create</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;artworkID&quot;:12477,
+  &quot;3DFiles&quot;:[]
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:false,
+  &quot;error&quot;:&quot;noFilesSpecified&quot;,
+  &quot;errorMessage&quot;:&quot;An artwork must specify at least one 3D file.&quot;
+}
+</code></pre>
+<h2 id="errors">Errors</h2>
+<p>The following list may not be exhaustive. Callers should always check the <code>ok</code> parameter of the JSON.</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessDenied</code></td>
+<td>Access to the specified resource is denied.</td>
+</tr>
+<tr>
+<td><code>tokenExpired</code></td>
+<td>The token has expired.</td>
+</tr>
+<tr>
+<td><code>tokenMissing</code></td>
+<td>No token was provided.</td>
+</tr>
+<tr>
+<td><code>unavailable</code></td>
+<td>The service is temporarily unavailable.</td>
+</tr>
+<tr>
+<td><code>internalError</code></td>
+<td>The request could not be completed due to an internal error. It is possible some of the request was carried out.</td>
+</tr>
+<tr>
+<td><code>invalidContentType</code></td>
+<td>The HTTP content type header was set incorrectly. It must be <code>application/JSON</code>.</td>
+</tr>
+<tr>
+<td><code>invalidArgument</code></td>
+<td>One or more of the arguments had an invalid or illegal value.</td>
+</tr>
+<tr>
+<td><code>unknownArgument</code></td>
+<td>One or more arguments were unknown.</td>
+</tr>
+<tr>
+<td><code>missingRequiredArgument</code></td>
+<td>One or more of the required arguments was missing.</td>
+</tr>
+<tr>
+<td><code>badJSON</code></td>
+<td>The JSON provided could not be parsed.</td>
+</tr>
+<tr>
+<td><code>noSuchFile</code></td>
+<td>There was no file matching the reference or the user does not have permission to access that file.</td>
+</tr>
+<tr>
+<td><code>duplicateFile</code></td>
+<td>A 3D file was included in the artwork more than once.</td>
+</tr>
+<tr>
+<td><code>noFilesSpecified</code></td>
+<td>An artwork must specify at least one 3D file.</td>
+</tr>
+<tr>
+<td><code>noFilesChanged</code></td>
+<td>The updated list of 3D files is the same as the current list of 3D files.</td>
+</tr>
+<tr>
+<td><code>noSuchArtwork</code></td>
+<td>There was no artwork matching the reference or the user does not have permission to access that artwork.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../remove/" class="btn btn-neutral float-left" title="POST artwork/remove"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../user/login/" class="btn btn-neutral float-right" title="Login">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../remove/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../user/login/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
