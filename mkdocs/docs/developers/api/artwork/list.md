@@ -89,7 +89,7 @@ Only artworks with a title matching the query string will be returned. The searc
 **Example:**
 `artwork/list?title=Zebra`
 
-**Allowed values:** Any string
+**Allowed values:** Any non empty string
 
 ___
 
@@ -144,7 +144,7 @@ Specifies the tags that should be matched. See the `tagMatchingStrategy` paramet
 **Example (specifies "animals", "cars", and "music"):**
 `artwork/list?tags=animals&tags=cars&tags=music`
 
-**Allowed values:** Strings.
+**Allowed values:** One or more none empty strings.
 ___
 
 ### `tagMatchingStrategy`
