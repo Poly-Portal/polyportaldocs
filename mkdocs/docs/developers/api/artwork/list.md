@@ -141,10 +141,10 @@ ___
 
 Specifies the tags that should be matched. See the `tagMatchingStrategy` parameter to select if results must match either all of the tags or just one or more (defaults to any).
 
-**Example:**
-`artwork/list?tags=["animals","cars"]`
+**Example (specifies "animals", "cars", and "music"):**
+`artwork/list?tags=animals&tags=cars&tags=music`
 
-**Allowed values:** A JSON style list of strings.
+**Allowed values:** Strings.
 ___
 
 ### `tagMatchingStrategy`
