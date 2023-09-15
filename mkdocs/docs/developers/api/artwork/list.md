@@ -258,8 +258,9 @@ The following list may not be exhaustive. Callers should always check the `ok` p
 | `tokenMissing` | No token was provided. |
 | `unavailable` | The service is temporarily unavailable. |
 | `internalError` | The request could not be completed due to an internal error. It is possible some of the request was carried out. |
-| `invalidParameterValue` | The value of one or more parameters was formatted incorrectly or had an illegal value. |
-| `unknownParameterValue` | One or more of the URL parameters was unknown. |
 | `noArtworksFound` | No artworks were found that matched the query. |
 | `pageLimitExceeded` | The page specified is greater than the total amount of pages at the given page size. |
+| `invalidArgument` | One or more of the arguments had an invalid or illegal value. |
+| `unknownArgument` | One or more arguments were unknown. |
+| `missingRequiredArgument` | One or more of the required arguments was missing. |
 
