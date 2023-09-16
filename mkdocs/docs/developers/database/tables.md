@@ -28,7 +28,7 @@ Table 3DFile {
   fileExtension text [not null] // Used to select the three.js loader
   ownerUserId bigserial [not null, ref: > User.id]
   uploadedAt timestamp [not null]
-  createdAt text [not null] // ISO 8601 timestamp
+  createdAt timestamp
   metaTriangleCount integer
   metaQuadCount integer
   metaPolygonCount integer
