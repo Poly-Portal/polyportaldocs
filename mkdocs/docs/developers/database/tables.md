@@ -24,7 +24,7 @@ Table User {
 
 Table 3DFile {
   id bigserial [pk]
-  sha256 char[256] [not null, unique] // Hash of the whole file. Can be translated into a URI.
+  sha256 char(64) [not null, unique] // Hash of the whole file. Can be translated into a URI.
   fileExtension text [not null] // Used to select the three.js loader
   ownerUserId bigserial [not null, ref: > User.id]
   uploadedAt timestamp [not null]
