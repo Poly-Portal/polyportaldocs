@@ -33,7 +33,7 @@ Table 3DFile {
   metaQuadCount integer
   metaPolygonCount integer
   metaTotalTriangleCount integer
-  metaVerticiesCount integer
+  metaVerticesCount integer
   metaMaterialsCount integer
   metaUVLayersCount integer
   metaHasVertexColors boolean
