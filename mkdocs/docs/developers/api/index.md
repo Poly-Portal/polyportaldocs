@@ -50,8 +50,12 @@ Callers may check if a request was successful using the `ok` field in the attach
 ```json
 {
   "ok":false,
-  "error":"accessDenied",
-  "errorMessage":"Access to the specified resource is denied."
+  "error": [
+    "accessDenied"
+  ]
+  "errorMessage":[
+    "Access to the specified resource is denied."
+  ]
 }
 ```
 

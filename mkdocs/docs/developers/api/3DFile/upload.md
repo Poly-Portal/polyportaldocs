@@ -45,8 +45,12 @@ None.
 ```json
 {
   "ok":false,
-  "error":"badFile",
-  "errorMessage":"The server rejected the file. The file may be corrupted or have an incorrect file extension."
+  "error": [
+    "badFile"
+  ]
+  "errorMessage":[
+    "The server rejected the file. The file may be corrupted or have an incorrect file extension."
+  ]
 }
 ```
 

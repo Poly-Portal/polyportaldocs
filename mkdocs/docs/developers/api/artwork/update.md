@@ -151,8 +151,12 @@ ___
 ```json
 {
   "ok":false,
-  "error":"noFilesSpecified",
-  "errorMessage":"An artwork must specify at least one 3D file."
+  "error": [
+    "noFilesSpecified"
+  ]
+  "errorMessage":[
+    "An artwork must specify at least one 3D file."
+  ]
 }
 ```
 

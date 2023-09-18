@@ -242,8 +242,12 @@ ___
 ```json
 {
   "ok":false,
-  "error":"invalidParameterValue",
-  "errorMessage":"Parameter 'sortOrder' had an invalid value."
+  "error": [
+    "invalidParameterValue"
+  ]
+  "errorMessage":[
+    "Parameter 'sortOrder' had an invalid value."
+  ]
 }
 ```
 

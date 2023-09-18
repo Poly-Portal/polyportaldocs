@@ -134,9 +134,13 @@ ___
 **Result:**
 ```json
 {
-    "ok":false,
-    "error":"duplicateFile",
-    "errorMessage":"A 3D file was included in the artwork more than once."
+  "ok":false,
+  "error": [
+    "duplicateFile"
+  ]
+  "errorMessage":[
+    "A 3D file was included in the artwork more than once."
+  ]
 }
 ```
 

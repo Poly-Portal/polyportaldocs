@@ -93,8 +93,12 @@ ___
 ```json
 {
   "ok":false,
-  "error":"invalidArgument",
-  "errorMessage":"Parameter 'artworkID' had an invalid value"
+  "error": [
+    "invalidArgument"
+  ]
+  "errorMessage":[
+    "Parameter 'artworkID' had an invalid value"
+  ]
 }
 ```
 git 

@@ -86,8 +86,12 @@ None.
 ```json
 {
   "ok":false,
-  "error":"unknownArgument",
-  "errorMessage":"Unknown argument was passed. Allowed arguments are: `fileExtension`."
+  "error": [
+    "unknownArgument"
+  ]
+  "errorMessage":[
+    "Unknown argument was passed. Allowed arguments are: `fileExtension`."
+  ]
 }
 ```
 

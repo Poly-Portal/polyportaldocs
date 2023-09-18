@@ -70,8 +70,12 @@ ___
 ```json
 {
   "ok":false,
-  "error":"noSuchFile",
-  "errorMessage":"There was no file matching the reference or the user does not have permission to access that file."
+  "error": [
+    "noSuchFile"
+  ]
+  "errorMessage":[
+    "There was no file matching the reference or the user does not have permission to access that file."
+  ]
 }
 ```
 
