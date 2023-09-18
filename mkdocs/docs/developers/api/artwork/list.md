@@ -89,7 +89,7 @@ Only artworks with a title matching the query string will be returned. The searc
 **Example:**
 `artwork/list?title=Zebra`
 
-**Allowed values:** Any string
+**Allowed values:** Any non empty string
 
 ___
 
@@ -141,10 +141,10 @@ ___
 
 Specifies the tags that should be matched. See the `tagMatchingStrategy` parameter to select if results must match either all of the tags or just one or more (defaults to any).
 
-**Example:**
-`artwork/list?tags=["animals","cars"]`
+**Example (specifies "animals", "cars", and "music"):**
+`artwork/list?tags=animals&tags=cars&tags=music`
 
-**Allowed values:** A JSON style list of strings.
+**Allowed values:** One or more none empty strings.
 ___
 
 ### `tagMatchingStrategy`
@@ -264,8 +264,9 @@ The following list may not be exhaustive. Callers should always check the `ok` p
 | `tokenMissing` | No token was provided. |
 | `unavailable` | The service is temporarily unavailable. |
 | `internalError` | The request could not be completed due to an internal error. It is possible some of the request was carried out. |
-| `invalidParameterValue` | The value of one or more parameters was formatted incorrectly or had an illegal value. |
-| `unknownParameterValue` | One or more of the URL parameters was unknown. |
 | `noArtworksFound` | No artworks were found that matched the query. |
 | `pageLimitExceeded` | The page specified is greater than the total amount of pages at the given page size. |
+| `invalidArgument` | One or more of the arguments had an invalid or illegal value. |
+| `unknownArgument` | One or more arguments were unknown. |
+| `missingRequiredArgument` | One or more of the required arguments was missing. |
 

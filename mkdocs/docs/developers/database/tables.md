@@ -24,16 +24,16 @@ Table User {
 
 Table 3DFile {
   id bigserial [pk]
-  sha256 char[256] [not null, unique] // Hash of the whole file. Can be translated into a URI.
+  sha256 char(64) [not null, unique] // Hash of the whole file. Can be translated into a URI.
   fileExtension text [not null] // Used to select the three.js loader
   ownerUserId bigserial [not null, ref: > User.id]
   uploadedAt timestamp [not null]
-  createdAt text [not null] // ISO 8601 timestamp
+  createdAt timestamp
   metaTriangleCount integer
   metaQuadCount integer
   metaPolygonCount integer
   metaTotalTriangleCount integer
-  metaVerticiesCount integer
+  metaVerticesCount integer
   metaMaterialsCount integer
   metaUVLayersCount integer
   metaHasVertexColors boolean
