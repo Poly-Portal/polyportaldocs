@@ -149,6 +149,8 @@ ___
 
 ### `tagMatchingStrategy`
 
+**Note: Currently not implemented**
+
 Specifies the matching criteria for tags. If this parameter is used you must also specify the `tags` parameter.
 
 * `all`: Will only return artworks that have all of the tags specified
