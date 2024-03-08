@@ -5,25 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>POST 3DFile/create - Poly Portal Documentation</title>
+    <title>`POST` artworkFile/create - Poly Portal Documentation</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "POST 3DFile/create";
-        var mkdocs_page_input_path = "developers/api/3DFile/create.md";
+        var mkdocs_page_name = "`POST` artworkFile/create";
+        var mkdocs_page_input_path = "developers/api/artworkFile/create.md";
         var mkdocs_page_url = null;
       </script>
     
+    <script src="../../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +36,7 @@
           <a href="../../../.." class="icon icon-home"> Poly Portal Documentation
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -58,9 +59,21 @@
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../">API Documentation</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">3DFile</a>
+                <li class="toctree-l2"><a class="reference internal" href="#">Artwork</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/create/">`POST` artwork/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/list/">`GET` artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/remove/">`POST` artwork/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/update/">`POST` artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">artworkFile</a>
     <ul class="current">
-                <li class="toctree-l3 current"><a class="reference internal current" href="./">POST 3DFile/create</a>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">`POST` artworkFile/create</a>
     <ul class="current">
     <li class="toctree-l4"><a class="reference internal" href="#description-and-usage">Description and Usage</a>
     </li>
@@ -76,33 +89,17 @@
     </li>
     </ul>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../remove/">POST 3DFile/remove</a>
+                <li class="toctree-l3"><a class="reference internal" href="../remove/">`POST` artworkFile/remove</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../upload/">POST 3DFile/upload</a>
+                <li class="toctree-l3"><a class="reference internal" href="../upload/">`POST` artworkFile/upload</a>
                 </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">Artwork</a>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Database</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/create/">POST artwork/create</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/list/">GET artwork/list</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/remove/">POST artwork/remove</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/update/">POST artwork/update</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">User</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../user/login/">Login</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../user/logout/">Logout</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../user/register/">Register</a>
-                </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../database/tables/">Database Tables</a>
                 </li>
     </ul>
                   </li>
@@ -125,11 +122,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+    <li><a href="../../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Developers &raquo;</li>
           <li>Api &raquo;</li>
-          <li>3DFile &raquo;</li>
-      <li class="breadcrumb-item active">POST 3DFile/create</li>
+          <li>artworkFile &raquo;</li>
+      <li>`POST` artworkFile/create</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -138,9 +135,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="post-3dfilecreate"><code>POST</code> 3DFile/create</h1>
+                <h1 id="post-artworkfilecreate"><code>POST</code> artworkFile/create</h1>
 <h2 id="description-and-usage">Description and Usage</h2>
-<p>This method is used with its companion method <a href="../upload/"><code>3DFile/upload</code></a> to upload files to the server. This method informs the server of your intention to upload a file and provides a one time use 'file upload token' that is required by <code>3DFile/upload</code>. The token is valid until the time indicated in the response or until it has been used.</p>
+<p>This endpoint is used with its companion endpoint <a href="../upload/"><code>artworkFile/upload</code></a> to upload files to the server. This method informs the server of your intention to upload a file and provides a one time use 'file upload token' that is required by <code>artworkFile/upload</code>. The file upload token is a JSON Web Token from which the expiry time can be determined. An approximation of seconds until expiry is included in the response.</p>
 <p><strong>Arguments must be sent in the message body as valid JSON.</strong></p>
 <h2 id="key-information">Key information</h2>
 <table>
@@ -174,28 +171,15 @@
   &quot;fileExtension&quot;:&quot;fbx&quot;
 }
 </code></pre>
-<p><strong>Allowed values:</strong> The file extension (without a preceding dot) of a file to uploaded. Specifying the wrong extension is likely to cause <code>3DFile/upload</code> to fail.</p>
-<p>Allowed file types (case insensitive):</p>
-<ul>
-<li>
-<p><code>fbx</code></p>
-</li>
-<li>
-<p><code>obj</code></p>
-</li>
-<li>
-<p><code>stl</code></p>
-</li>
-<li>
-<p><code>stp</code></p>
-</li>
-<li>
-<p><code>glb</code></p>
-</li>
-<li>
-<p><code>gltf</code></p>
-</li>
-</ul>
+<p><strong>Allowed values:</strong> The file extension (without a preceding dot) of a file to uploaded. Specifying the wrong extension is likely to cause <code>3DFile/upload</code> to fail. Any string is accepted.</p>
+<h3 id="filename"><code>fileName</code></h3>
+<p>The name of the file that will be uploaded. This is not required to include the dot (.) used for the file extension.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;fileName&quot;:&quot;My_c00l_m0del&quot;
+}
+</code></pre>
+<p><strong>Allowed values:</strong> Any string.</p>
 <hr />
 <h2 id="optional-arguments">Optional Arguments</h2>
 <p>None.</p>
@@ -204,14 +188,15 @@
 <p><strong>Request:</strong> <code>POST 3DFile/create</code></p>
 <p><strong>Request Body:</strong></p>
 <pre><code class="language-json">{
+  &quot;fileName&quot;:&quot;C3PO&quot;,
   &quot;fileExtension&quot;:&quot;fbx&quot;
 }
 </code></pre>
 <p><strong>Result:</strong></p>
 <pre><code class="language-json">{
   &quot;ok&quot;:true,
-  &quot;fileUploadToken&quot;:&quot;AYjcyMzY3ZDhiNmJkNTY&quot;,
-  &quot;secondsToExpiry&quot;:3600
+  &quot;fileUploadToken&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlIiwiaWF0IjoxNzA5ODg2MjgxLCJleHAiOjE3MDk4ODc1OTIsImF1ZCI6Ind3dy5leGFtcGxlLmNvbSIsInN1YiI6InVwbG9hZDo4NDg1ODM3NDc1ODYifQ.ai3a3aRR1fNOZLcZEzQ6KcLDtf9wH7VFXmF5dC79VtM&quot;,
+  &quot;secondsToExpiry&quot;:1200
 }
 </code></pre>
 <h3 id="on-error">On Error</h3>
@@ -284,8 +269,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../" class="btn btn-neutral float-left" title="API Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../remove/" class="btn btn-neutral float-right" title="POST 3DFile/remove">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../artwork/update/" class="btn btn-neutral float-left" title="`POST` artwork/update"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../remove/" class="btn btn-neutral float-right" title="`POST` artworkFile/remove">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -308,22 +293,21 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../artwork/update/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../remove/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../../../..";</script>
-    <script src="../../../../js/theme_extra.js"></script>
-    <script src="../../../../js/theme.js"></script>
-      <script src="../../../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme_extra.js" defer></script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
-        });
+        };
     </script>
 
 </body>

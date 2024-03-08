@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Database Tables - Poly Portal Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Database Tables";
+        var mkdocs_page_input_path = "developers/database/tables.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Poly Portal Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">PolyPortal User Manual and Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Administrators</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../administrators/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">Developer Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Api</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/">API Documentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Artwork</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/create/">`POST` artwork/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/list/">`GET` artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/remove/">`POST` artwork/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/update/">`POST` artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">artworkFile</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artworkFile/create/">`POST` artworkFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artworkFile/remove/">`POST` artworkFile/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artworkFile/upload/">`POST` artworkFile/upload</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Database</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Database Tables</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#dbml">DBML</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Users</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../users/">Index</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Poly Portal Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Developers &raquo;</li>
+          <li>Database &raquo;</li>
+      <li>Database Tables</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="database-tables">Database Tables</h1>
+<p><strong>These documents reflect the tables early in the design stage and may not be up to date. Use as reference only.</strong></p>
+<p><img alt="Image" src="../tables.png" /></p>
+<h2 id="dbml">DBML</h2>
+<p>The following is a DBML description of the database, Create a diagram at https://dbdiagram.io/ to view it. </p>
+<pre><code>// Display: https://dbdiagram.io/
+// Docs: https://dbml.dbdiagram.io/docs/
+
+// This table tracks individual users
+Table User {
+  id bigserial [pk]
+  email text [not null, unique]
+  emailVerified boolean [not null, default: false]
+  passwordHash text [not null]
+  passwordSalt text [not null, unique]
+}
+
+
+Table 3DFile {
+  id bigserial [pk]
+  sha256 char(64) [not null, unique] // Hash of the whole file. Can be translated into a URI.
+  fileExtension text [not null] // Used to select the three.js loader
+  ownerUserId bigserial [not null, ref: &gt; User.id]
+  uploadedAt timestamp [not null]
+  createdAt timestamp
+  metaTriangleCount integer
+  metaQuadCount integer
+  metaPolygonCount integer
+  metaTotalTriangleCount integer
+  metaVerticesCount integer
+  metaMaterialsCount integer
+  metaUVLayersCount integer
+  metaHasVertexColors boolean
+  metaAnimationsCount integer
+  metaHasRiggedGeometries boolean
+  metaHasScaleTransformations boolean
+  metaHasMorphGeometries boolean
+  metaHasPhysicallyBasedRendering boolean
+}
+
+Table Artwork {
+  id bigserial [pk]
+  title text [not null]
+  description text [not null]
+  downloadCount integer [not null, default: 0]
+  viewCount integer [not null, default: 0]
+}
+
+Table ArtworkFiles {
+  artworkId bigserial [ref: &gt; Artwork.id]
+  3dFileId bigserial [ref: &gt; 3DFile.id]
+  artworkVersion integer [not null]
+  indexes {
+    (artworkId, 3dFileId) [pk]
+  }
+}
+
+Table ArtworkTags {
+  artworkId bigserial [ref: &gt; Artwork.id]
+  tag text [not null]
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../api/artworkFile/upload/" class="btn btn-neutral float-left" title="`POST` artworkFile/upload"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../users/" class="btn btn-neutral float-right" title="Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../api/artworkFile/upload/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../users/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

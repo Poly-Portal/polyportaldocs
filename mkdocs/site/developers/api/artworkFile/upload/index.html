@@ -5,25 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>POST 3DFile/remove - Poly Portal Documentation</title>
+    <title>`POST` artworkFile/upload - Poly Portal Documentation</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "POST 3DFile/remove";
-        var mkdocs_page_input_path = "developers/api/3DFile/remove.md";
+        var mkdocs_page_name = "`POST` artworkFile/upload";
+        var mkdocs_page_input_path = "developers/api/artworkFile/upload.md";
         var mkdocs_page_url = null;
       </script>
     
+    <script src="../../../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +36,7 @@
           <a href="../../../.." class="icon icon-home"> Poly Portal Documentation
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -58,11 +59,25 @@
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../">API Documentation</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">3DFile</a>
-    <ul class="current">
-                <li class="toctree-l3"><a class="reference internal" href="../create/">POST 3DFile/create</a>
+                <li class="toctree-l2"><a class="reference internal" href="#">Artwork</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/create/">`POST` artwork/create</a>
                 </li>
-                <li class="toctree-l3 current"><a class="reference internal current" href="./">POST 3DFile/remove</a>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/list/">`GET` artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/remove/">`POST` artwork/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artwork/update/">`POST` artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">artworkFile</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../create/">`POST` artworkFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../remove/">`POST` artworkFile/remove</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">`POST` artworkFile/upload</a>
     <ul class="current">
     <li class="toctree-l4"><a class="reference internal" href="#description-and-usage">Description and Usage</a>
     </li>
@@ -78,31 +93,13 @@
     </li>
     </ul>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../upload/">POST 3DFile/upload</a>
-                </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">Artwork</a>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Database</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/create/">POST artwork/create</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/list/">GET artwork/list</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/remove/">POST artwork/remove</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../artwork/update/">POST artwork/update</a>
-                </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">User</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../user/login/">Login</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../user/logout/">Logout</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="../../user/register/">Register</a>
-                </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../database/tables/">Database Tables</a>
                 </li>
     </ul>
                   </li>
@@ -125,11 +122,11 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+    <li><a href="../../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Developers &raquo;</li>
           <li>Api &raquo;</li>
-          <li>3DFile &raquo;</li>
-      <li class="breadcrumb-item active">POST 3DFile/remove</li>
+          <li>artworkFile &raquo;</li>
+      <li>`POST` artworkFile/upload</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -138,10 +135,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="post-3dfileremove"><code>POST</code> 3DFile/remove</h1>
+                <h1 id="post-artworkfileupload"><code>POST</code> artworkFile/upload</h1>
 <h2 id="description-and-usage">Description and Usage</h2>
-<p>Remove a 3D file, preventing access to it. The file itself will be preserved on disk. The file must not be associated with an artwork.</p>
-<p><strong>Arguments must be sent in the message body as valid JSON.</strong></p>
+<p>This method uploads a file to the server. A 'file upload token' is required and can be obtained from <a href="../create/"><code>artworkFile/create</code></a>. Making the request consumes the token, regardless of if the request was successful or not. A user token is not required for this method. On success the sha-256 hash of the file will be returned which can be used to access the file.</p>
 <h2 id="key-information">Key information</h2>
 <table>
 <thead>
@@ -157,51 +153,36 @@
 </tr>
 <tr>
 <td>Token</td>
-<td>User token</td>
+<td>File upload token</td>
 </tr>
 <tr>
 <td>HTTP content type</td>
-<td><code>application/json</code></td>
+<td><code>multipart/form-data</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="required-arguments">Required Arguments</h2>
-<hr />
-<h3 id="file"><code>file</code></h3>
-<p>The file reference (sha-256) of the file to be deleted. The file may not be in use by an artwork.</p>
-<p><strong>Example:</strong></p>
-<pre><code class="language-json">{
-  &quot;file&quot;:&quot;6b34652fb313f2ebbbd086a222a1b7ad60d0add0aea753e451b94230eb4e5a1e&quot;
-}
-</code></pre>
-<p><strong>Allowed values:</strong> A string matching a file reference.</p>
-<hr />
+<p>None. Ensure you have a file upload token from <a href="../create/"><code>artworkFile/create</code></a>. The file is sent in the body as <code>multipart/form-data</code> content.</p>
 <h2 id="optional-arguments">Optional Arguments</h2>
+<p>None.</p>
 <h2 id="example-responses">Example Responses</h2>
 <h3 id="on-success">On Success</h3>
-<p><strong>Request:</strong> <code>POST 3DFile/remove</code></p>
-<p><strong>Request Body:</strong></p>
-<pre><code class="language-json">{
-  &quot;file&quot;:&quot;6b34652fb313f2ebbbd086a222a1b7ad60d0add0aea753e451b94230eb4e5a1e&quot;
-}
-</code></pre>
+<p><strong>Request:</strong> <code>POST artworkFile/upload</code></p>
 <p><strong>Result:</strong></p>
 <pre><code class="language-json">{
-  &quot;ok&quot;:true
+  &quot;ok&quot;:true,
+  &quot;file&quot;:{
+    &quot;sha256&quot;:&quot;5e77061a9b955ac03d9a574a8a68d8a58005949fa4fdd3d9e38dbd263028ffe8&quot;,
+  }
 }
 </code></pre>
 <h3 id="on-error">On Error</h3>
-<p><strong>Request:</strong> <code>POST 3DFile/remove</code></p>
-<p><strong>Request Body:</strong></p>
-<pre><code class="language-json">{
-  &quot;file&quot;:&quot;not_a_valid_file_reference&quot;
-}
-</code></pre>
+<p><strong>Request:</strong> <code>POST artworkFile/upload</code></p>
 <p><strong>Result:</strong></p>
 <pre><code class="language-json">{
   &quot;ok&quot;:false,
-  &quot;error&quot;:&quot;noSuchFile&quot;,
-  &quot;errorMessage&quot;:&quot;There was no file matching the reference or the user does not have permission to access that file.&quot;
+  &quot;error&quot;:&quot;badFile&quot;,
+  &quot;errorMessage&quot;:&quot;The server rejected the file. The file may be corrupted or have an incorrect file extension.&quot;
 }
 </code></pre>
 <h2 id="errors">Errors</h2>
@@ -236,31 +217,11 @@
 </tr>
 <tr>
 <td><code>invalidContentType</code></td>
-<td>The HTTP content type header was set incorrectly. It must be <code>application/JSON</code>.</td>
+<td>The HTTP content type header was set incorrectly. It must be <code>multipart/form-data</code>.</td>
 </tr>
 <tr>
-<td><code>invalidArgument</code></td>
-<td>One or more of the arguments had an invalid or illegal value.</td>
-</tr>
-<tr>
-<td><code>unknownArgument</code></td>
-<td>One or more arguments were unknown.</td>
-</tr>
-<tr>
-<td><code>missingRequiredArgument</code></td>
-<td>One or more of the required arguments was missing.</td>
-</tr>
-<tr>
-<td><code>badJSON</code></td>
-<td>The JSON provided could not be parsed.</td>
-</tr>
-<tr>
-<td><code>noSuchFile</code></td>
-<td>There was no file matching the reference or the user does not have permission to access that file.</td>
-</tr>
-<tr>
-<td><code>fileInUse</code></td>
-<td>The file is referenced by an artwork. Remove the artwork first.</td>
+<td><code>badFile</code></td>
+<td>The server rejected the file. The file may be corrupted or have an incorrect file extension.</td>
 </tr>
 </tbody>
 </table>
@@ -268,8 +229,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../create/" class="btn btn-neutral float-left" title="POST 3DFile/create"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../upload/" class="btn btn-neutral float-right" title="POST 3DFile/upload">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../remove/" class="btn btn-neutral float-left" title="`POST` artworkFile/remove"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../database/tables/" class="btn btn-neutral float-right" title="Database Tables">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -292,22 +253,21 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../create/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../remove/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../upload/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../../database/tables/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../../../..";</script>
-    <script src="../../../../js/theme_extra.js"></script>
-    <script src="../../../../js/theme.js"></script>
-      <script src="../../../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme_extra.js" defer></script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
-        });
+        };
     </script>
 
 </body>

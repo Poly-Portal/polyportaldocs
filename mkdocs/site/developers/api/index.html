@@ -8,7 +8,7 @@
     <title>API Documentation - Poly Portal Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,13 +17,14 @@
         var mkdocs_page_url = null;
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/rust.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +36,7 @@
           <a href="../.." class="icon icon-home"> Poly Portal Documentation
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -74,43 +75,39 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tokens-and-the-authorization-header">Tokens and The Authorization Header</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#quick-reference">Quick reference</a>
+    <li class="toctree-l3"><a class="reference internal" href="#file-uploads">File Uploads</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#endpoints">Endpoints</a>
     </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">3DFile</a>
-    <ul>
-                <li class="toctree-l3"><a class="reference internal" href="3DFile/create/">POST 3DFile/create</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="3DFile/remove/">POST 3DFile/remove</a>
-                </li>
-                <li class="toctree-l3"><a class="reference internal" href="3DFile/upload/">POST 3DFile/upload</a>
-                </li>
-    </ul>
-                </li>
                 <li class="toctree-l2"><a class="reference internal" href="#">Artwork</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="artwork/create/">POST artwork/create</a>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/create/">`POST` artwork/create</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="artwork/list/">GET artwork/list</a>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/list/">`GET` artwork/list</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="artwork/remove/">POST artwork/remove</a>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/remove/">`POST` artwork/remove</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="artwork/update/">POST artwork/update</a>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/update/">`POST` artwork/update</a>
                 </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="#">User</a>
+                <li class="toctree-l2"><a class="reference internal" href="#">artworkFile</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="user/login/">Login</a>
+                <li class="toctree-l3"><a class="reference internal" href="artworkFile/create/">`POST` artworkFile/create</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="user/logout/">Logout</a>
+                <li class="toctree-l3"><a class="reference internal" href="artworkFile/remove/">`POST` artworkFile/remove</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="user/register/">Register</a>
+                <li class="toctree-l3"><a class="reference internal" href="artworkFile/upload/">`POST` artworkFile/upload</a>
                 </li>
     </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Database</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../database/tables/">Database Tables</a>
                 </li>
     </ul>
                   </li>
@@ -133,10 +130,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>Developers &raquo;</li>
           <li>Api &raquo;</li>
-      <li class="breadcrumb-item active">API Documentation</li>
+      <li>API Documentation</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -146,8 +143,10 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="api-documentation">API Documentation</h1>
-<p>Poly Portal uses a REST style API to communicate between server and client. Outbound content (from the server to the client) is retrieved via <code>GET</code> request and inbound content (from the client to the server) is delivered via a <code>POST</code> request<code>*</code>.</p>
-<p><code>*</code> There is additional complexity around file uploads. This is explained in the relevant sections.</p>
+<p>Poly Portal uses a REST style API to communicate between server and client. Outbound content (from the server to the client) is retrieved via <code>GET</code> request and inbound content (from the client to the server) is delivered via a <code>POST</code> request.</p>
+<ul>
+<li>There is additional complexity around file uploads. This is explained in the relevant sections.</li>
+</ul>
 <h2 id="overview">Overview</h2>
 <h3 id="get-requests"><code>GET</code> Requests</h3>
 <p><code>GET</code> requests accept url parameters and returns JSON. Example URL parameter: <code>www.abc.com/page?key1=value1&amp;key2=value2</code>.</p>
@@ -155,17 +154,17 @@
 <h3 id="post-requests-excluding-file-upload">POST Requests (Excluding File Upload)</h3>
 <p><code>POST</code> accepts JSON bodies as an input and will return JSON.</p>
 <p>The HTTP <code>Content-type</code> header <strong>must</strong> be set to <code>application/json</code>.</p>
-<p>A valid token must be provided in the HTTP <code>Authorization</code> header.</p>
+<p>A valid user token must be provided in the HTTP <code>Authorization</code> header.</p>
 <h3 id="post-request-file-upload-only">POST Request (File Upload Only)</h3>
 <p><code>POST</code> requests for file uploads <strong>must</strong> have the HTTP <code>Content-type</code> header set to <code>multipart/form-data</code></p>
 <p>A special file upload token must be provided in the HTTP <code>Authorization</code> header. This token is unique to the file being uploaded.</p>
 <h2 id="important-terms-and-nomenclature">Important Terms and Nomenclature.</h2>
 <ul>
 <li>
-<p><strong>3D Files</strong>: A 3D file is an individual file containing 3d assets. Such files include .FBX and .OBJ files.</p>
+<p><strong>Artwork Files</strong>: An artwork file is an individual file used in an artwork. Such files include meshes, textures, materials, and other supporting files..</p>
 </li>
 <li>
-<p><strong>Artworks</strong>: An artwork is a <em>collection</em> of one or more <em>3D files.</em> One artwork may contain many <em>3D files.</em> Artworks may also have many versions.</p>
+<p><strong>Artworks</strong>: An artwork is a <em>collection</em> of one or more <em>artwork files.</em> One artwork may contain many <em>artwork files.</em> Artworks may also have many versions.</p>
 </li>
 </ul>
 <h2 id="http-response-codes-and-error-handling">HTTP Response Codes and Error Handling</h2>
@@ -185,13 +184,14 @@
 }
 </code></pre>
 <h2 id="tokens-and-the-authorization-header">Tokens and The Authorization Header</h2>
-<p>There are two types of tokens. To maintain security the tokens must be kept secret. Tokens are included plaintext in the authorization header using the basic authorization scheme.  </p>
+<p>There are two types of tokens. To maintain security the tokens must be kept secret. Tokens are included plaintext in the authorization header using the bearer schema, ex: <code>Authorization: Bearer &lt;token&gt;</code>.</p>
 <ul>
 <li><strong>User tokens.</strong> User tokens are issued to users when they log in and are used for most API features. The token uniquely identifies the user.</li>
-<li><strong>File upload tokens</strong>. File upload tokens are issued when uploading a file. When a request is made using a file upload token the token is consumed and another must be generated. See <a href="3DFile/create/"><code>3DFile/create</code></a> and <a href="3DFile/upload/"><code>3DFile/upload</code></a> for more information.</li>
+<li><strong>File upload tokens</strong>. File upload tokens are issued when uploading a file. When a request is made using a file upload token the token is consumed and another must be generated. See <a href="artworkFile/create/"><code>artworkFile/create</code></a> and <a href="artworkFile/upload/"><code>artworkFile/upload</code></a> for more information.</li>
 </ul>
-<h2 id="quick-reference">Quick reference</h2>
-<p>TODO</p>
+<h2 id="file-uploads">File Uploads</h2>
+<p>The image below gives an overview of the sequence to upload files to Poly Portal.</p>
+<p><img alt="Image" src="fileUpload.png" /></p>
 <h2 id="endpoints">Endpoints</h2>
 <table>
 <thead>
@@ -224,33 +224,18 @@
 </tr>
 <tr>
 <td><code>POST</code></td>
-<td><a href="3DFile/create/"><code>3DFile/create</code></a></td>
-<td>Inform the server of your intention to upload a 3D file.</td>
+<td><a href="artworkFile/create/"><code>artworkFile/create</code></a></td>
+<td>Inform the server of your intention to upload a artwork file.</td>
 </tr>
 <tr>
 <td><code>POST</code></td>
-<td><a href="3DFile/upload/"><code>3DFile/upload</code></a></td>
-<td>Upload a 3D file using the details from <code>3DFile/create</code>.</td>
+<td><a href="artworkFile/upload/"><code>artworkFile/upload</code></a></td>
+<td>Upload a artwork file using the details from <code>artworkFile/create</code>.</td>
 </tr>
 <tr>
 <td><code>POST</code></td>
-<td><a href="3DFile/remove/"><code>3DFile/remove</code></a></td>
-<td>Delete a 3D file.</td>
-</tr>
-<tr>
-<td><code>POST</code></td>
-<td><a href="user/login/"><code>user/login</code></a></td>
-<td>Login an existing user.</td>
-</tr>
-<tr>
-<td><code>POST</code></td>
-<td><a href="user/register/"><code>user/register</code></a></td>
-<td>Register a new user.</td>
-</tr>
-<tr>
-<td><code>POST</code></td>
-<td><a href="user/logout/"><code>user/logout</code></a></td>
-<td>Revoke all tokens issued to a user.</td>
+<td><a href="artworkFile/remove/"><code>artworkFile/remove</code></a></td>
+<td>Delete a artwork file.</td>
 </tr>
 </tbody>
 </table>
@@ -259,7 +244,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../" class="btn btn-neutral float-left" title="Developer Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="3DFile/create/" class="btn btn-neutral float-right" title="POST 3DFile/create">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="artwork/create/" class="btn btn-neutral float-right" title="`POST` artwork/create">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -285,19 +270,18 @@
       <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="3DFile/create/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="artwork/create/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
-        });
+        };
     </script>
 
 </body>

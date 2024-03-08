@@ -203,7 +203,7 @@ ___
         ],
         "materials":[
           {
-            "sha256":"eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12",
+            "sha256":"d3b6c52687d9bfa360b0b60ab1ced83072afa07e2705ebd6d7be478837e0d351",
             "filename":"mats",
             "extension":"mtl"
           }
