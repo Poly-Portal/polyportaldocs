@@ -2,7 +2,7 @@
 
 ## Description and Usage
 
-Remove an artwork, preventing access to it. The artwork will still be preserved on disk. Optionally removes associated 3D files (default behavior is to remove). On success a list of orphaned 3D files will be returned (if no files were orphaned, such as if they were all removed, an empty list is returned).
+Remove an artwork, preventing access to it. The artwork will still be preserved on disk. Optionally removes associated files (the default behavior is to remove). On success, a list of orphaned files will be returned (if no files were orphaned, such as if they were all removed, an empty list is returned).
 
 **Arguments must be sent in the message body as valid JSON.**
 
@@ -35,14 +35,14 @@ ___
 ## Optional Arguments
 
 ___
-### `remove3DFiles`
+### `removeFiles`
 
-If 3D files associated with the artwork should also be removed. The function is equivalent to [`3DFile/remove`](../3DFile/remove.md) Default = `true`.
+If the files associated with the artwork should also be removed. The function is equivalent to [`artworkFile/remove`](../artworkFile/remove.md) Default = `true`.
 
 **Example:**
 ```json
 {
-  "remove3DFiles":false
+  "removeFiles":false
 }
 ```
 
@@ -61,7 +61,7 @@ ___
 ```json
 {
   "artworkID":9785,
-  "remove3DFiles":false
+  "removeartworkFiles":false
 }
 ```
 

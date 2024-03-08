@@ -1,8 +1,8 @@
-# `POST` 3DFile/create
+# `POST` artworkFile/create
 
 ## Description and Usage
 
-This method is used with its companion method [`3DFile/upload`](./upload.md) to upload files to the server. This method informs the server of your intention to upload a file and provides a one time use 'file upload token' that is required by `3DFile/upload`. The token is valid until the time indicated in the response or until it has been used.
+This endpoint is used with its companion endpoint [`artworkFile/upload`](./upload.md) to upload files to the server. This method informs the server of your intention to upload a file and provides a one time use 'file upload token' that is required by `artworkFile/upload`. The file upload token is a JSON Web Token from which the expiry time can be determined. An approximation of seconds until expiry is included in the response.
 
 **Arguments must be sent in the message body as valid JSON.**
 
@@ -28,21 +28,22 @@ The file extension of the file that will be uploaded. **The file extension shoul
 }
 ```
 
-**Allowed values:** The file extension (without a preceding dot) of a file to uploaded. Specifying the wrong extension is likely to cause `3DFile/upload` to fail.
+**Allowed values:** The file extension (without a preceding dot) of a file to uploaded. Specifying the wrong extension is likely to cause `3DFile/upload` to fail. Any string is accepted.
 
-Allowed file types (case insensitive):
 
-* `fbx`
-  
-* `obj`
-  
-* `stl`
-  
-* `stp`
-  
-* `glb`
-  
-* `gltf`
+### `fileName`
+
+The name of the file that will be uploaded. This is not required to include the dot (.) used for the file extension.
+
+**Example:**
+```json
+{
+  "fileName":"My_c00l_m0del"
+}
+```
+
+**Allowed values:** Any string.
+
 ___
 
 ## Optional Arguments
@@ -58,6 +59,7 @@ None.
 **Request Body:**
 ```json
 {
+  "fileName":"C3PO",
   "fileExtension":"fbx"
 }
 ```
@@ -66,8 +68,8 @@ None.
 ```json
 {
   "ok":true,
-  "fileUploadToken":"AYjcyMzY3ZDhiNmJkNTY",
-  "secondsToExpiry":3600
+  "fileUploadToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlIiwiaWF0IjoxNzA5ODg2MjgxLCJleHAiOjE3MDk4ODc1OTIsImF1ZCI6Ind3dy5leGFtcGxlLmNvbSIsInN1YiI6InVwbG9hZDo4NDg1ODM3NDc1ODYifQ.ai3a3aRR1fNOZLcZEzQ6KcLDtf9wH7VFXmF5dC79VtM",
+  "secondsToExpiry":1200
 }
 ```
 

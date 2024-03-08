@@ -181,16 +181,48 @@ ___
       "title":"Aardvark",
       "downloads":4952,
       "views":73645,
-      "current3DFiles":[
-        {
-          "sha256":"c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243",
-          "extension":"fbx"
-        },
-        {
-          "sha256":"4b1a5c87adc45123a290be68575072c880fa17e68c3b9e6cc74bbf16be5095c6",
-          "extension":"fbx"
-        }
-      ],
+      "files":{
+        "models":[
+          {
+            "sha256":"c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243",
+            "filename":"Aardvark",
+            "extension":"obj"
+          }
+        ],
+        "textures":[
+          {
+            "sha256":"2f33b1f6e25d5d0ded190b8a70ae253c6112c834b3b45640236452b57811b4e7",
+            "filename":"tex",
+            "extension":"png"
+          },
+          {
+            "sha256":"eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12",
+            "filename":"shadows",
+            "extension":"png"
+          }
+        ],
+        "materials":[
+          {
+            "sha256":"eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12",
+            "filename":"mats",
+            "extension":"mtl"
+          }
+        ],
+        "thumbnails":[
+          {
+            "sha256":"1f33b7baff0ec4b46a508deb9db1c6f5844de78205935b54d7bb7e45ec1ac30c",
+            "filename":"1024x1024",
+            "extension":"jpg"
+          }
+        ],
+        "other":[
+          {
+            "sha256":"7112026d192c74cf7fb325dd5f0ad1d603d0689faebee84fd6a6babf0a3b6f7f",
+            "filename":"readme",
+            "extension":"txt"
+          }
+        ]
+      },
       "tags":[
         "Animal",
         "Land animal"
@@ -201,12 +233,18 @@ ___
       "title":"Beaver",
       "downloads":52,
       "views":645,
-      "current3DFiles":[
-        {
-          "sha256":"dde91fcdf38dc7e38739c99c1a873ed3979327d49d2f0e45e09a81417b4a3806",
-          "extension":"fbx"
-        }
-      ],
+      "files":{
+        "models":[
+          {
+            "sha256":"dde91fcdf38dc7e38739c99c1a873ed3979327d49d2f0e45e09a81417b4a3806",
+            "extension":"fbx"
+          }
+        ],
+        "textures":[],
+        "materials":[],
+        "thumbnails":[],
+        "other":[]
+      },
       "tags":[
         "tags aren't always useful"
       ]
@@ -216,12 +254,18 @@ ___
       "title":"Camel",
       "downloads":52221,
       "views":64345,
-      "current3DFiles":[
-        {
-          "sha256":"e7070285bc228a6efc71835794f0f80b1181c2d8e30d48fe8ec733c7e2ee509e",
-          "extension":"fbx"
-        }
-      ],
+      "files":{
+        "models":[
+          {
+            "sha256":"e7070285bc228a6efc71835794f0f80b1181c2d8e30d48fe8ec733c7e2ee509e",
+            "extension":"fbx"
+          }
+        ],
+        "textures":[],
+        "materials":[],
+        "thumbnails":[],
+        "other":[]
+      },
       "tags":[]
     }
   ]
@@ -232,7 +276,7 @@ ___
   
 * Successful queries will always return at least one artwork.
   
-* The order of `"current3DFiles"` is guaranteed to be the same across requests.
+* The order of files is guaranteed to be the same across requests.
 
 ### On Error
 

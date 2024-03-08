@@ -2,7 +2,7 @@
 
 ## Description and Usage
 
-May be used to change the title of an artwork, modify the description, and/or update what 3D files are associated with the artwork.
+May be used to change the title of an artwork, modify the description, and/or update what files are associated with the artwork.
 
 **At least one of the optional arguments must be specified.**
 
@@ -55,21 +55,37 @@ Specifies the title of the artwork.
 
 ___
 
-### `3DFiles`
+### `files`
 
-Specifies the files included in this artwork. The files may already be included in the artwork or they may be files not included in any artwork. The files must not be included in any *other* artwork and must be owned by the user. The updated list of files must not be identical to the current list of files - if the files are not being updated do not use this argument.
+Specifies the files included in this artwork. The files may already be included in the artwork or they may be files not included in any artwork. The user must have permission to use the files. The updated list of files must not be identical to the current list of files - if the files are not being updated do not use this argument.
+
+The behavior is the same as the 'files' argument for the [artwork/create](./create.md#files) endpoint.
 
 **Example:**
 ```json
 {
-  "3DFiles":[
-    "2ba58048d97a6adefa8089b60322933489d07ba0b58f6528a07980142a7ccf5c",
-    "fcd91acd1fe9e861082e5a6346ad430feb6c14452308cf79e515a1906fa3b22d"
-  ]
+  "files":{
+    "models":[
+      "c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243"
+    ],
+    "textures":[
+      "2f33b1f6e25d5d0ded190b8a70ae253c6112c834b3b45640236452b57811b4e7",
+      "eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12"
+    ],
+    "materials":[
+      "eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12"
+    ],
+    "thumbnails":[
+      "1f33b7baff0ec4b46a508deb9db1c6f5844de78205935b54d7bb7e45ec1ac30c"
+    ],
+    "other":[
+      "7112026d192c74cf7fb325dd5f0ad1d603d0689faebee84fd6a6babf0a3b6f7f"
+    ]
+  }
 }
 ```
 
-**Allowed values:** A list of valid file references. See above.
+**Allowed values:** A list of valid file references that are not used in other artworks and are the user has permission to use. Additional restrictions may be placed on what files may be used for a specific purpose. For example, a JPEG is not a model.
 
 ___
 
@@ -143,7 +159,7 @@ ___
 ```json
 {
   "artworkID":12477,
-  "3DFiles":[]
+  "files":[]
 }
 ```
 
@@ -152,7 +168,7 @@ ___
 {
   "ok":false,
   "error":"noFilesSpecified",
-  "errorMessage":"An artwork must specify at least one 3D file."
+  "errorMessage":"An artwork must specify at least one model file."
 }
 ```
 
@@ -173,8 +189,10 @@ The following list may not be exhaustive. Callers should always check the `ok` p
 | `missingRequiredArgument` | One or more of the required arguments was missing. |
 | `badJSON` | The JSON provided could not be parsed. |
 | `noSuchFile` | There was no file matching the reference or the user does not have permission to access that file. |
-| `duplicateFile` | A 3D file was included in the artwork more than once. |
-| `noFilesSpecified` | An artwork must specify at least one 3D file. |
-| `noFilesChanged` | The updated list of 3D files is the same as the current list of 3D files.  |
+| `duplicateFile` | A file was included in the artwork more than once. |
+| `noFilesSpecified` | An artwork must specify at least one file. |
+| `noFilesChanged` | The updated list of files is the same as the current list of files.  |
 | `noSuchArtwork` | There was no artwork matching the reference or the user does not have permission to access that artwork. |
+| `unsuitableFile` | A file was specified for an unsuitable purpose (e.g. an image used as a model). |
+
 

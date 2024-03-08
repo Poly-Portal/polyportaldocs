@@ -1,8 +1,8 @@
-# `POST` 3DFile/remove
+# `POST` artworkFile/remove
 
 ## Description and Usage
 
-Remove a 3D file, preventing access to it. The file itself will be preserved on disk. The file must not be associated with an artwork.
+Remove an artwork file, preventing access to it. The file itself will be preserved on disk. The file must not be associated with an artwork.
 
 **Arguments must be sent in the message body as valid JSON.**
 
@@ -34,12 +34,13 @@ ___
 
 ## Optional Arguments
 
+None.
 
 ## Example Responses
 
 ### On Success
 
-**Request:** `POST 3DFile/remove`
+**Request:** `POST artworkFile/remove`
 
 **Request Body:**
 ```json
@@ -57,7 +58,7 @@ ___
 
 ### On Error
 
-**Request:** `POST 3DFile/remove`
+**Request:** `POST artworkFile/remove`
 
 **Request Body:**
 ```json

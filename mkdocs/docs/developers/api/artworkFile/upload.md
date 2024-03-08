@@ -1,8 +1,8 @@
-# `POST` 3DFile/upload
+# `POST` artworkFile/upload
 
 ## Description and Usage
 
-This method uploads a file to the server. A 'file upload token' is required and can be obtained from [`3DFile/create`](./create.md). Making the request consumes the token, regardless of if the request was successful or not. A user token is not required for this method. On success the sha-256 hash of the file will be returned which can be used to access the file and associated objects from an S3 bucket.
+This method uploads a file to the server. A 'file upload token' is required and can be obtained from [`artworkFile/create`](./create.md). Making the request consumes the token, regardless of if the request was successful or not. A user token is not required for this method. On success the sha-256 hash of the file will be returned which can be used to access the file.
 
 ## Key information
 
@@ -14,7 +14,7 @@ This method uploads a file to the server. A 'file upload token' is required and 
 
 ## Required Arguments
 
-None. Ensure you have a file upload token from [`3DFile/create`](./create.md). The file is sent in the body as `multipart/form-data` content.
+None. Ensure you have a file upload token from [`artworkFile/create`](./create.md). The file is sent in the body as `multipart/form-data` content.
 
 ## Optional Arguments
 
@@ -24,22 +24,21 @@ None.
 
 ### On Success
 
-**Request:** `POST 3DFile/upload`
+**Request:** `POST artworkFile/upload`
 
 **Result:**
 ```json
 {
   "ok":true,
-  "3DFile":{
+  "file":{
     "sha256":"5e77061a9b955ac03d9a574a8a68d8a58005949fa4fdd3d9e38dbd263028ffe8",
-    "extension":"obj"
   }
 }
 ```
 
 ### On Error
 
-**Request:** `POST 3DFile/upload`
+**Request:** `POST artworkFile/upload`
 
 **Result:**
 ```json
