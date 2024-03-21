@@ -171,8 +171,9 @@ Table ArtworkTags {
   tag text [not null]
 }
 
-Table ConsumedArtworkFileUploadTokens {
+Table ArtworkFileUploadTokens {
   jti text [pk]
+  artworkId bigserial [ref: &gt; Artwork.id]
 }
 </code></pre>
               
