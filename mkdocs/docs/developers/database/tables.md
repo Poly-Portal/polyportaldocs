@@ -51,9 +51,7 @@ Table ArtworkTags {
   tag text [not null]
 }
 
-Table ArtworkFileUploadTokens {
-  id text [pk]
-  artworkFileId bigserial [ref: > File.id, not null]
-  token text [not null]
+Table ConsumedArtworkFileUploadTokens {
+  jti text [pk]
 }
 ```
