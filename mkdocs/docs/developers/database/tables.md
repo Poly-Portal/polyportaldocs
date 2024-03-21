@@ -52,9 +52,8 @@ Table ArtworkTags {
 }
 
 Table ArtworkFileUploadTokens {
-  id bigserial [pk]
+  id text [pk]
   artworkFileId bigserial [ref: > File.id, not null]
   token text [not null]
-  expiryTime timestamp [not null]
 }
 ```
