@@ -16,8 +16,9 @@ The following is a DBML description of the database, Create a diagram at https:/
 Table File {
   id bigserial [pk]
   fileExtension text [not null] // Used to select the three.js loader
+  fileName text [not null]
   ownerUserId bigserial [not null]
-  uploadedAt timestamp [not null]
+  uploadedAt timestamp
 }
 
 Table Artwork {
