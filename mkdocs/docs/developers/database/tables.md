@@ -15,7 +15,6 @@ The following is a DBML description of the database, Create a diagram at https:/
 
 Table File {
   id bigserial [pk]
-  sha256 char(64) [not null, unique] // Hash of the whole file. Can be translated into a URI.
   fileExtension text [not null] // Used to select the three.js loader
   ownerUserId bigserial [not null]
   uploadedAt timestamp [not null]

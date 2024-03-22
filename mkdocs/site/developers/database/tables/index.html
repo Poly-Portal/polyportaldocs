@@ -167,13 +167,18 @@ Table ArtworkFiles {
 }
 
 Table ArtworkTags {
-  artworkId bigserial [ref: &gt; Artwork.id]
+  artworkId bigserial [ref: &gt; Artwork.id, not null]
   tag text [not null]
+
+  Indexes {
+    (artworkId, tag) [unique]
+  }
 }
 
 Table ArtworkFileUploadTokens {
   jti text [pk]
-  artworkId bigserial [ref: &gt; Artwork.id]
+  artworkId bigserial [ref: &gt; Artwork.id, not null]
+  consumed boolean [not null, default: FALSE]
 }
 </code></pre>
               
