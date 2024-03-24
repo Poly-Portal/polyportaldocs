@@ -57,7 +57,7 @@ Table ArtworkTags {
 
 Table ArtworkFileUploadTokens {
   jti text [pk]
-  artworkId bigserial [ref: > Artwork.id, not null]
+  fileId bigserial [ref: > File.id, not null]
   consumed boolean [not null, default: FALSE]
 }
 ```
