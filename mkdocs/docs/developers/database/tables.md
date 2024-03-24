@@ -17,7 +17,7 @@ Table File {
   id bigserial [pk]
   fileExtension text [not null] // Used to select the three.js loader
   fileName text [not null]
-  ownerUserId bigserial [not null]
+  ownerUserId text [not null]
   uploadedAt timestamp
 }
 
@@ -25,7 +25,7 @@ Table Artwork {
   id bigserial [pk]
   title text [not null]
   description text [not null]
-  ownerUserId bigserial [not null]
+  ownerUserId text [not null]
   downloadCount integer [not null, default: 0]
   viewCount integer [not null, default: 0]
   createdAt timestamp [not null]
