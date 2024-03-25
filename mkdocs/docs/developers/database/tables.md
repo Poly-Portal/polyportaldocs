@@ -21,6 +21,8 @@ Table File {
   uploadedAt timestamp
 }
 
+
+
 Table Artwork {
   id bigserial [pk]
   title text [not null]
@@ -37,10 +39,19 @@ Table Artwork {
   metaMaterialsCount integer
 }
 
+Enum FileType {
+  MODEL
+  TEXTURE
+  MATERIAL
+  THUMBNAIL
+  OTHER
+}
+
 Table ArtworkFiles {
   artworkId bigserial [ref: > Artwork.id]
   artworkFileId bigserial [ref: > File.id]
   artworkVersion integer [not null]
+  fileType FileType [not null]
   indexes {
     (artworkId, artworkFileId) [pk]
   }
