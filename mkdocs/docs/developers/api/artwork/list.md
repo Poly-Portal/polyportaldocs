@@ -181,7 +181,7 @@ ___
       "title":"Aardvark",
       "downloads":4952,
       "views":73645,
-      "createdAt":1711605653
+      "createdAt":1711605653,
       "files":{
         "models":[
           {
@@ -234,7 +234,7 @@ ___
       "title":"Beaver",
       "downloads":52,
       "views":645,
-      "createdAt":1711604234
+      "createdAt":1711604234,
       "files":{
         "models":[
           {
