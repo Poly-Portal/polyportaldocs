@@ -185,40 +185,40 @@ ___
       "files":{
         "models":[
           {
-            "sha256":"c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243",
+            "fileId":"c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243",
             "filename":"Aardvark",
             "extension":"obj"
           }
         ],
         "textures":[
           {
-            "sha256":"2f33b1f6e25d5d0ded190b8a70ae253c6112c834b3b45640236452b57811b4e7",
+            "fileId":"2f33b1f6e25d5d0ded190b8a70ae253c6112c834b3b45640236452b57811b4e7",
             "filename":"tex",
             "extension":"png"
           },
           {
-            "sha256":"eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12",
+            "fileId":"eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12",
             "filename":"shadows",
             "extension":"png"
           }
         ],
         "materials":[
           {
-            "sha256":"d3b6c52687d9bfa360b0b60ab1ced83072afa07e2705ebd6d7be478837e0d351",
+            "fileId":"d3b6c52687d9bfa360b0b60ab1ced83072afa07e2705ebd6d7be478837e0d351",
             "filename":"mats",
             "extension":"mtl"
           }
         ],
         "thumbnails":[
           {
-            "sha256":"1f33b7baff0ec4b46a508deb9db1c6f5844de78205935b54d7bb7e45ec1ac30c",
+            "fileId":"1f33b7baff0ec4b46a508deb9db1c6f5844de78205935b54d7bb7e45ec1ac30c",
             "filename":"1024x1024",
             "extension":"jpg"
           }
         ],
         "other":[
           {
-            "sha256":"7112026d192c74cf7fb325dd5f0ad1d603d0689faebee84fd6a6babf0a3b6f7f",
+            "fileId":"7112026d192c74cf7fb325dd5f0ad1d603d0689faebee84fd6a6babf0a3b6f7f",
             "filename":"readme",
             "extension":"txt"
           }
@@ -234,10 +234,11 @@ ___
       "title":"Beaver",
       "downloads":52,
       "views":645,
+      "createdAt":1711604234
       "files":{
         "models":[
           {
-            "sha256":"dde91fcdf38dc7e38739c99c1a873ed3979327d49d2f0e45e09a81417b4a3806",
+            "fileId":"dde91fcdf38dc7e38739c99c1a873ed3979327d49d2f0e45e09a81417b4a3806",
             "extension":"fbx"
           }
         ],
@@ -258,7 +259,7 @@ ___
       "files":{
         "models":[
           {
-            "sha256":"e7070285bc228a6efc71835794f0f80b1181c2d8e30d48fe8ec733c7e2ee509e",
+            "fileId":"e7070285bc228a6efc71835794f0f80b1181c2d8e30d48fe8ec733c7e2ee509e",
             "extension":"fbx"
           }
         ],
