@@ -84,7 +84,7 @@ ___
 
 ### `title`
 
-Only artworks with a title matching the query string will be returned. The search is case-insensitive.
+Only artworks with a title exactly matching the query string will be returned. 
 
 **Example:**
 `artwork/list?title=Zebra`
@@ -113,28 +113,6 @@ Only artworks uploaded after the specified timestamp will be returned.
 
 **Allowed values:** UNIX timestamp in integer seconds.
 
-
-___
-
-### `createdBefore`
-
-Only artworks with files created before the specified ISO 8601 date-time will be returned. This argument is timezone unaware, timezone information will be silently discarded.
-
-**Example:**
-`artwork/list?createdBefore=2023‐09‐07`
-
-**Allowed values:** An ISO 8601 date-time.
-
-___
-
-### `createdAfter`
-
-Only artworks with files created after the specified ISO 8601 date-time will be returned. This argument is timezone unaware, timezone information will be silently discarded.
-
-**Example:**
-`artwork/list?createdAfter=2023‐09‐07`
-
-**Allowed values:** An ISO 8601 date-time.
 ___
 
 ### `tags`
