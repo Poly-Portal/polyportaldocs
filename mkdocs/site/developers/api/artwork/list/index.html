@@ -203,7 +203,7 @@
 <p><strong>Allowed values:</strong> A file extension without a preceding dot.</p>
 <hr />
 <h3 id="title"><code>title</code></h3>
-<p>Only artworks with a title matching the query string will be returned. The search is case-insensitive.</p>
+<p>Only artworks with a title exactly matching the query string will be returned. </p>
 <p><strong>Example:</strong>
 <code>artwork/list?title=Zebra</code></p>
 <p><strong>Allowed values:</strong> Any non empty string</p>
@@ -219,18 +219,6 @@
 <p><strong>Example:</strong>
 <code>artwork/list?uploadedAfter=1694085155</code></p>
 <p><strong>Allowed values:</strong> UNIX timestamp in integer seconds.</p>
-<hr />
-<h3 id="createdbefore"><code>createdBefore</code></h3>
-<p>Only artworks with files created before the specified ISO 8601 date-time will be returned. This argument is timezone unaware, timezone information will be silently discarded.</p>
-<p><strong>Example:</strong>
-<code>artwork/list?createdBefore=2023‐09‐07</code></p>
-<p><strong>Allowed values:</strong> An ISO 8601 date-time.</p>
-<hr />
-<h3 id="createdafter"><code>createdAfter</code></h3>
-<p>Only artworks with files created after the specified ISO 8601 date-time will be returned. This argument is timezone unaware, timezone information will be silently discarded.</p>
-<p><strong>Example:</strong>
-<code>artwork/list?createdAfter=2023‐09‐07</code></p>
-<p><strong>Allowed values:</strong> An ISO 8601 date-time.</p>
 <hr />
 <h3 id="tags"><code>tags</code></h3>
 <p>Specifies the tags that should be matched. See the <code>tagMatchingStrategy</code> parameter to select if results must match either all of the tags or just one or more (defaults to any).</p>

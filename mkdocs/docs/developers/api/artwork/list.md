@@ -151,103 +151,121 @@ ___
 {
   "ok":true,
   "pageSize":3,
-  "page":2,
-  "lastPage":78,
+  "page":1,
+  "lastPage":5,
   "artworks":[
     {
-      "id":634,
-      "title":"Aardvark",
-      "downloads":4952,
-      "views":73645,
-      "createdAt":1711605653,
+      "id":"21",
+      "title":"Nation still.",
+      "downloads":4037,
+      "views":750,
+      "createdAt":1369539861,
       "files":{
         "models":[
-          {
-            "fileId":"c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243",
-            "filename":"Aardvark",
-            "extension":"obj"
-          }
+          
         ],
         "textures":[
           {
-            "fileId":"2f33b1f6e25d5d0ded190b8a70ae253c6112c834b3b45640236452b57811b4e7",
-            "filename":"tex",
-            "extension":"png"
-          },
-          {
-            "fileId":"eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12",
-            "filename":"shadows",
-            "extension":"png"
+            "fileId":"52",
+            "fileName":"71",
+            "fileExtension":"glb",
+            "signedURL":null,
+            "signedURLExpiryTimeSeconds":null
           }
         ],
         "materials":[
-          {
-            "fileId":"d3b6c52687d9bfa360b0b60ab1ced83072afa07e2705ebd6d7be478837e0d351",
-            "filename":"mats",
-            "extension":"mtl"
-          }
+          
         ],
         "thumbnails":[
           {
-            "fileId":"1f33b7baff0ec4b46a508deb9db1c6f5844de78205935b54d7bb7e45ec1ac30c",
-            "filename":"1024x1024",
-            "extension":"jpg"
+            "fileId":"95",
+            "fileName":"56",
+            "fileExtension":"fbx",
+            "signedURL":null,
+            "signedURLExpiryTimeSeconds":null
           }
         ],
         "other":[
-          {
-            "fileId":"7112026d192c74cf7fb325dd5f0ad1d603d0689faebee84fd6a6babf0a3b6f7f",
-            "filename":"readme",
-            "extension":"txt"
-          }
+          
         ]
       },
       "tags":[
-        "Animal",
-        "Land animal"
+        "Member.",
+        "Same."
       ]
     },
     {
-      "id":126,
-      "title":"Beaver",
-      "downloads":52,
-      "views":645,
-      "createdAt":1711604234,
+      "id":"20",
+      "title":"Fish magazine.",
+      "downloads":2837,
+      "views":4072,
+      "createdAt":1075818863,
       "files":{
         "models":[
           {
-            "fileId":"dde91fcdf38dc7e38739c99c1a873ed3979327d49d2f0e45e09a81417b4a3806",
-            "extension":"fbx"
+            "fileId":"34",
+            "fileName":"88",
+            "fileExtension":"glb",
+            "signedURL":null,
+            "signedURLExpiryTimeSeconds":null
           }
         ],
-        "textures":[],
-        "materials":[],
-        "thumbnails":[],
-        "other":[]
+        "textures":[
+          
+        ],
+        "materials":[
+          
+        ],
+        "thumbnails":[
+          
+        ],
+        "other":[
+          
+        ]
       },
       "tags":[
-        "tags aren't always useful"
+        "Alone.",
+        "More."
       ]
     },
     {
-      "id":85765,
-      "title":"Camel",
-      "downloads":52221,
-      "views":64345,
-      "createdAt":17604234,
+      "id":"26",
+      "title":"Alone.",
+      "downloads":61,
+      "views":4268,
+      "createdAt":72198176,
       "files":{
         "models":[
+          
+        ],
+        "textures":[
           {
-            "fileId":"e7070285bc228a6efc71835794f0f80b1181c2d8e30d48fe8ec733c7e2ee509e",
-            "extension":"fbx"
+            "fileId":"69",
+            "fileName":"25",
+            "fileExtension":"fbx",
+            "signedURL":null,
+            "signedURLExpiryTimeSeconds":null
           }
         ],
-        "textures":[],
-        "materials":[],
-        "thumbnails":[],
-        "other":[]
+        "materials":[
+          
+        ],
+        "thumbnails":[
+          {
+            "fileId":"46",
+            "fileName":"84",
+            "fileExtension":"glb",
+            "signedURL":null,
+            "signedURLExpiryTimeSeconds":null
+          }
+        ],
+        "other":[
+          
+        ]
       },
-      "tags":[]
+      "tags":[
+        
+      ]
     }
   ]
 }

@@ -89,6 +89,8 @@
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#dbml">DBML</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creation-script">Creation Script</a>
+    </li>
     </ul>
                 </li>
     </ul>
@@ -191,6 +193,68 @@ Table ArtworkFileUploadTokens {
   fileId bigserial [ref: &gt; File.id, not null]
   consumed boolean [not null, default: FALSE]
 }
+</code></pre>
+<h2 id="creation-script">Creation Script</h2>
+<pre><code class="language-SQL">CREATE TYPE &quot;FileType&quot; AS ENUM (
+  'MODEL',
+  'TEXTURE',
+  'MATERIAL',
+  'THUMBNAIL',
+  'OTHER'
+);
+
+CREATE TABLE &quot;File&quot; (
+  &quot;id&quot; bigserial PRIMARY KEY,
+  &quot;fileExtension&quot; text NOT NULL,
+  &quot;fileName&quot; text NOT NULL,
+  &quot;ownerUserId&quot; text NOT NULL,
+  &quot;uploadedAt&quot; timestamp
+);
+
+CREATE TABLE &quot;Artwork&quot; (
+  &quot;id&quot; bigserial PRIMARY KEY,
+  &quot;title&quot; text NOT NULL,
+  &quot;description&quot; text NOT NULL,
+  &quot;ownerUserId&quot; text NOT NULL,
+  &quot;downloadCount&quot; integer NOT NULL DEFAULT 0,
+  &quot;viewCount&quot; integer NOT NULL DEFAULT 0,
+  &quot;createdAt&quot; timestamp NOT NULL,
+  &quot;metaTriangleCount&quot; integer,
+  &quot;metaQuadCount&quot; integer,
+  &quot;metaPolygonCount&quot; integer,
+  &quot;metaTotalTriangleCount&quot; integer,
+  &quot;metaVerticesCount&quot; integer,
+  &quot;metaMaterialsCount&quot; integer
+);
+
+CREATE TABLE &quot;ArtworkFiles&quot; (
+  &quot;artworkId&quot; bigserial,
+  &quot;artworkFileId&quot; bigserial,
+  &quot;artworkVersion&quot; integer NOT NULL,
+  &quot;fileType&quot; &quot;FileType&quot; NOT NULL,
+  PRIMARY KEY (&quot;artworkId&quot;, &quot;artworkFileId&quot;)
+);
+
+CREATE TABLE &quot;ArtworkTags&quot; (
+  &quot;artworkId&quot; bigserial NOT NULL,
+  &quot;tag&quot; text NOT NULL
+);
+
+CREATE TABLE &quot;ArtworkFileUploadTokens&quot; (
+  &quot;jti&quot; text PRIMARY KEY,
+  &quot;fileId&quot; bigserial NOT NULL,
+  &quot;consumed&quot; boolean NOT NULL DEFAULT false
+);
+
+CREATE UNIQUE INDEX ON &quot;ArtworkTags&quot; (&quot;artworkId&quot;, &quot;tag&quot;);
+
+ALTER TABLE &quot;ArtworkFiles&quot; ADD FOREIGN KEY (&quot;artworkId&quot;) REFERENCES &quot;Artwork&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;ArtworkFiles&quot; ADD FOREIGN KEY (&quot;artworkFileId&quot;) REFERENCES &quot;File&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;ArtworkTags&quot; ADD FOREIGN KEY (&quot;artworkId&quot;) REFERENCES &quot;Artwork&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;ArtworkFileUploadTokens&quot; ADD FOREIGN KEY (&quot;fileId&quot;) REFERENCES &quot;File&quot; (&quot;id&quot;);
 </code></pre>
               
             </div>

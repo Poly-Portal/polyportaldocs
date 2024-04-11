@@ -2,7 +2,7 @@
 
 ## Description and Usage
 
-This endpoint is used with its companion endpoint [`artworkFile/upload`](./upload.md) to upload files to the server. This method informs the server of your intention to upload a file and provides a one time use 'file upload token' that is required by `artworkFile/upload`. The file upload token is a JSON Web Token from which the expiry time can be determined. An approximation of seconds until expiry is included in the response.
+This endpoint is used in preparation for uploading a file. The response will contain a location and fields to send a POST request to S3 in order to complete the upload. The POST request is signed and will only be valid for a set period. 
 
 **Arguments must be sent in the message body as valid JSON.**
 
@@ -68,8 +68,21 @@ None.
 ```json
 {
   "ok":true,
-  "fileUploadToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlIiwiaWF0IjoxNzA5ODg2MjgxLCJleHAiOjE3MDk4ODc1OTIsImF1ZCI6Ind3dy5leGFtcGxlLmNvbSIsInN1YiI6InVwbG9hZDo4NDg1ODM3NDc1ODYifQ.ai3a3aRR1fNOZLcZEzQ6KcLDtf9wH7VFXmF5dC79VtM",
-  "secondsToExpiry":1200
+  "fileId":"114",
+  "signedPOST":{
+    "url":"https://poly-portal-files.s3.ap-southeast-2.amazonaws.com/",
+    "fields":{
+      "acl":"private",
+      "bucket":"poly-portal-files",
+      "X-Amz-Algorithm":"AWS4-HMAC-SHA256",
+      "X-Amz-Credential":"AKIA2OYZ4MVHCXYHVNHH/20240411/ap-southeast-2/s3/aws4_request",
+      "X-Amz-Date":"20240411T080107Z",
+      "key":"113",
+      "Policy":"eyJleHBpcmF0aW9uIjoiMjAyNC0wNC0xMVQwOTowMTowN1oiLCJjb25kaXRpb25zIjpbWyJlcSIsIiRhY2wiLCJwcml2YXRlIl0sWyJlcSIsIiRidWNrZXQiLCJwb2x5LXBvcnRhbC1maWxlcyJdLFsiZXEiLCIka2V5IiwiMTEzIl0seyJhY2wiOiJwcml2YXRlIn0seyJidWNrZXQiOiJwb2x5LXBvcnRhbC1maWxlcyJ9LHsiWC1BbXotQWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsiWC1BbXotQ3JlZGVudGlhbCI6IkFLSUEyT1laNE1WSENYWUhWTkhILzIwMjQwNDExL2FwLXNvdXRoZWFzdC0yL3MzL2F3czRfcmVxdWVzdCJ9LHsiWC1BbXotRGF0ZSI6IjIwMjQwNDExVDA4MDEwN1oifSx7ImtleSI6IjExMyJ9XX0=",
+      "X-Amz-Signature":"96bf8fb91251f30970c2a49ad54d765d13cba776d714f5427d38ff07902266d5"
+    }
+  },
+  "secondsToExpiry":3600
 }
 ```
 
@@ -89,7 +102,7 @@ None.
 {
   "ok":false,
   "error":"unknownArgument",
-  "errorMessage":"Unknown argument was passed. Allowed arguments are: `fileExtension`."
+  "errorMessage":"Unknown argument was passed. Allowed arguments are: 'fileExtension', 'fileName'."
 }
 ```
 
