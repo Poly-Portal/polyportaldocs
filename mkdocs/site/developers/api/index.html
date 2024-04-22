@@ -99,8 +99,6 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="artworkFile/remove/">`POST` artworkFile/remove</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="artworkFile/upload/">`POST` artworkFile/upload</a>
-                </li>
     </ul>
                 </li>
     </ul>
@@ -187,7 +185,7 @@
 <p>There are two types of tokens. To maintain security the tokens must be kept secret. Tokens are included plaintext in the authorization header using the bearer schema, ex: <code>Authorization: Bearer &lt;token&gt;</code>.</p>
 <ul>
 <li><strong>User tokens.</strong> User tokens are issued to users when they log in and are used for most API features. The token uniquely identifies the user.</li>
-<li><strong>File upload tokens</strong>. File upload tokens are issued when uploading a file. When a request is made using a file upload token the token is consumed and another must be generated. See <a href="artworkFile/create/"><code>artworkFile/create</code></a> and <a href="artworkFile/upload/"><code>artworkFile/upload</code></a> for more information.</li>
+<li><strong>File upload tokens</strong>. File upload tokens are issued when uploading a file. When a request is made using a file upload token the token is consumed and another must be generated. See <a href="artworkFile/create/"><code>artworkFile/create</code></a> and <a href="artworkFile/upload.md"><code>artworkFile/upload</code></a> for more information.</li>
 </ul>
 <h2 id="file-uploads">File Uploads</h2>
 <p>The image below gives an overview of the sequence to upload files to Poly Portal.</p>
@@ -229,7 +227,7 @@
 </tr>
 <tr>
 <td><code>POST</code></td>
-<td><a href="artworkFile/upload/"><code>artworkFile/upload</code></a></td>
+<td><a href="artworkFile/upload.md"><code>artworkFile/upload</code></a></td>
 <td>Upload a artwork file using the details from <code>artworkFile/create</code>.</td>
 </tr>
 <tr>

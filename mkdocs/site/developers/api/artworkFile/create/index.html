@@ -91,8 +91,6 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="../remove/">`POST` artworkFile/remove</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="../upload/">`POST` artworkFile/upload</a>
-                </li>
     </ul>
                 </li>
     </ul>
@@ -137,7 +135,7 @@
               
                 <h1 id="post-artworkfilecreate"><code>POST</code> artworkFile/create</h1>
 <h2 id="description-and-usage">Description and Usage</h2>
-<p>This endpoint is used with its companion endpoint <a href="../upload/"><code>artworkFile/upload</code></a> to upload files to the server. This method informs the server of your intention to upload a file and provides a one time use 'file upload token' that is required by <code>artworkFile/upload</code>. The file upload token is a JSON Web Token from which the expiry time can be determined. An approximation of seconds until expiry is included in the response.</p>
+<p>This endpoint is used in preparation for uploading a file. The response will contain a location and fields to send a POST request to S3 in order to complete the upload. The POST request is signed and will only be valid for a set period. </p>
 <p><strong>Arguments must be sent in the message body as valid JSON.</strong></p>
 <h2 id="key-information">Key information</h2>
 <table>
@@ -195,8 +193,21 @@
 <p><strong>Result:</strong></p>
 <pre><code class="language-json">{
   &quot;ok&quot;:true,
-  &quot;fileUploadToken&quot;:&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlIiwiaWF0IjoxNzA5ODg2MjgxLCJleHAiOjE3MDk4ODc1OTIsImF1ZCI6Ind3dy5leGFtcGxlLmNvbSIsInN1YiI6InVwbG9hZDo4NDg1ODM3NDc1ODYifQ.ai3a3aRR1fNOZLcZEzQ6KcLDtf9wH7VFXmF5dC79VtM&quot;,
-  &quot;secondsToExpiry&quot;:1200
+  &quot;fileId&quot;:&quot;114&quot;,
+  &quot;signedPOST&quot;:{
+    &quot;url&quot;:&quot;https://poly-portal-files.s3.ap-southeast-2.amazonaws.com/&quot;,
+    &quot;fields&quot;:{
+      &quot;acl&quot;:&quot;private&quot;,
+      &quot;bucket&quot;:&quot;poly-portal-files&quot;,
+      &quot;X-Amz-Algorithm&quot;:&quot;AWS4-HMAC-SHA256&quot;,
+      &quot;X-Amz-Credential&quot;:&quot;AKIA2OYZ4MVHCXYHVNHH/20240411/ap-southeast-2/s3/aws4_request&quot;,
+      &quot;X-Amz-Date&quot;:&quot;20240411T080107Z&quot;,
+      &quot;key&quot;:&quot;113&quot;,
+      &quot;Policy&quot;:&quot;eyJleHBpcmF0aW9uIjoiMjAyNC0wNC0xMVQwOTowMTowN1oiLCJjb25kaXRpb25zIjpbWyJlcSIsIiRhY2wiLCJwcml2YXRlIl0sWyJlcSIsIiRidWNrZXQiLCJwb2x5LXBvcnRhbC1maWxlcyJdLFsiZXEiLCIka2V5IiwiMTEzIl0seyJhY2wiOiJwcml2YXRlIn0seyJidWNrZXQiOiJwb2x5LXBvcnRhbC1maWxlcyJ9LHsiWC1BbXotQWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsiWC1BbXotQ3JlZGVudGlhbCI6IkFLSUEyT1laNE1WSENYWUhWTkhILzIwMjQwNDExL2FwLXNvdXRoZWFzdC0yL3MzL2F3czRfcmVxdWVzdCJ9LHsiWC1BbXotRGF0ZSI6IjIwMjQwNDExVDA4MDEwN1oifSx7ImtleSI6IjExMyJ9XX0=&quot;,
+      &quot;X-Amz-Signature&quot;:&quot;96bf8fb91251f30970c2a49ad54d765d13cba776d714f5427d38ff07902266d5&quot;
+    }
+  },
+  &quot;secondsToExpiry&quot;:3600
 }
 </code></pre>
 <h3 id="on-error">On Error</h3>
@@ -210,7 +221,7 @@
 <pre><code class="language-json">{
   &quot;ok&quot;:false,
   &quot;error&quot;:&quot;unknownArgument&quot;,
-  &quot;errorMessage&quot;:&quot;Unknown argument was passed. Allowed arguments are: `fileExtension`.&quot;
+  &quot;errorMessage&quot;:&quot;Unknown argument was passed. Allowed arguments are: 'fileExtension', 'fileName'.&quot;
 }
 </code></pre>
 <h2 id="errors">Errors</h2>

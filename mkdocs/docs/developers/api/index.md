@@ -72,6 +72,7 @@ The image below gives an overview of the sequence to upload files to Poly Portal
 | Type | Endpoint | Description |
 | ---- | -------- | ----------- |
 | `GET` | [`artwork/list`](artwork/list.md) | Get a list of artworks matching search parameters in a specified order. |
+| `GET` | [`artwork/details`](artwork/details.md) | Get more details on a specific artwork. |
 | `POST` | [`artwork/create`](artwork/create.md) | Create a new artwork. |
 | `POST` | [`artwork/update`](artwork/update.md) | Create a new version of the artwork. |
 | `POST` | [`artwork/remove`](artwork/remove.md) | Remove an artwork. |
