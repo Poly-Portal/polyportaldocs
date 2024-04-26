@@ -53,7 +53,7 @@ Table ArtworkFiles {
   artworkVersion integer [not null]
   fileType FileType [not null]
   indexes {
-    (artworkId, artworkFileId) [pk]
+    (artworkId, artworkFileId, artworkVersion) [pk]
   }
 }
 
@@ -112,7 +112,7 @@ CREATE TABLE "ArtworkFiles" (
   "artworkFileId" bigserial,
   "artworkVersion" integer NOT NULL,
   "fileType" "FileType" NOT NULL,
-  PRIMARY KEY ("artworkId", "artworkFileId")
+  PRIMARY KEY ("artworkId", "artworkFileId", "artworkVersion")
 );
 
 CREATE TABLE "ArtworkTags" (
