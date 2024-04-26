@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Database Tables - Poly Portal Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Database Tables";
+        var mkdocs_page_input_path = "developers/database/tables.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Poly Portal Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">PolyPortal User Manual and Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Administrators</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../administrators/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">Developer Documentation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Api</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/">API Documentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Artwork</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/create/">POST artwork/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/details/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/list/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/remove/">POST artwork/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artwork/update/">POST artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >artworkFile</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artworkFile/create/">POST artworkFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../api/artworkFile/remove/">POST artworkFile/remove</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Database</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Database Tables</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#dbml">DBML</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creation-script">Creation Script</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Users</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../users/">Index</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Poly Portal Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developers</li>
+          <li class="breadcrumb-item">Database</li>
+      <li class="breadcrumb-item active">Database Tables</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="database-tables">Database Tables</h1>
+<p><strong>These documents reflect the tables in the design stage and may not be up to date. Use as reference only.</strong></p>
+<p><img alt="Image" src="../tables.png" /></p>
+<h2 id="dbml">DBML</h2>
+<p>The following is a DBML description of the database, Create a diagram at https://dbdiagram.io/ to view it. </p>
+<pre><code>// Display: https://dbdiagram.io/
+// Docs: https://dbml.dbdiagram.io/docs/
+
+
+Table File {
+  id bigserial [pk]
+  fileExtension text [not null] // Used to select the three.js loader
+  fileName text [not null]
+  ownerUserId text [not null]
+  uploadedAt timestamp
+}
+
+
+
+Table Artwork {
+  id bigserial [pk]
+  title text [not null]
+  description text [not null]
+  ownerUserId text [not null]
+  downloadCount integer [not null, default: 0]
+  viewCount integer [not null, default: 0]
+  createdAt timestamp [not null]
+  metaTriangleCount integer
+  metaQuadCount integer
+  metaPolygonCount integer
+  metaTotalTriangleCount integer
+  metaVerticesCount integer
+  metaMaterialsCount integer
+}
+
+Enum FileType {
+  MODEL
+  TEXTURE
+  MATERIAL
+  THUMBNAIL
+  OTHER
+}
+
+Table ArtworkFiles {
+  artworkId bigserial [ref: &gt; Artwork.id]
+  artworkFileId bigserial [ref: &gt; File.id]
+  artworkVersion integer [not null]
+  fileType FileType [not null]
+  indexes {
+    (artworkId, artworkFileId, artworkVersion) [pk]
+  }
+}
+
+Table ArtworkTags {
+  artworkId bigserial [ref: &gt; Artwork.id, not null]
+  tag text [not null]
+
+  Indexes {
+    (artworkId, tag) [unique]
+  }
+}
+
+Table ArtworkFileUploadTokens {
+  jti text [pk]
+  fileId bigserial [ref: &gt; File.id, not null]
+  consumed boolean [not null, default: FALSE]
+}
+</code></pre>
+<h2 id="creation-script">Creation Script</h2>
+<pre><code class="language-SQL">CREATE TYPE &quot;FileType&quot; AS ENUM (
+  'MODEL',
+  'TEXTURE',
+  'MATERIAL',
+  'THUMBNAIL',
+  'OTHER'
+);
+
+CREATE TABLE &quot;File&quot; (
+  &quot;id&quot; bigserial PRIMARY KEY,
+  &quot;fileExtension&quot; text NOT NULL,
+  &quot;fileName&quot; text NOT NULL,
+  &quot;ownerUserId&quot; text NOT NULL,
+  &quot;uploadedAt&quot; timestamp
+);
+
+CREATE TABLE &quot;Artwork&quot; (
+  &quot;id&quot; bigserial PRIMARY KEY,
+  &quot;title&quot; text NOT NULL,
+  &quot;description&quot; text NOT NULL,
+  &quot;ownerUserId&quot; text NOT NULL,
+  &quot;downloadCount&quot; integer NOT NULL DEFAULT 0,
+  &quot;viewCount&quot; integer NOT NULL DEFAULT 0,
+  &quot;createdAt&quot; timestamp NOT NULL,
+  &quot;metaTriangleCount&quot; integer,
+  &quot;metaQuadCount&quot; integer,
+  &quot;metaPolygonCount&quot; integer,
+  &quot;metaTotalTriangleCount&quot; integer,
+  &quot;metaVerticesCount&quot; integer,
+  &quot;metaMaterialsCount&quot; integer
+);
+
+CREATE TABLE &quot;ArtworkFiles&quot; (
+  &quot;artworkId&quot; bigserial,
+  &quot;artworkFileId&quot; bigserial,
+  &quot;artworkVersion&quot; integer NOT NULL,
+  &quot;fileType&quot; &quot;FileType&quot; NOT NULL,
+  PRIMARY KEY (&quot;artworkId&quot;, &quot;artworkFileId&quot;, &quot;artworkVersion&quot;)
+);
+
+CREATE TABLE &quot;ArtworkTags&quot; (
+  &quot;artworkId&quot; bigserial NOT NULL,
+  &quot;tag&quot; text NOT NULL
+);
+
+CREATE TABLE &quot;ArtworkFileUploadTokens&quot; (
+  &quot;jti&quot; text PRIMARY KEY,
+  &quot;fileId&quot; bigserial NOT NULL,
+  &quot;consumed&quot; boolean NOT NULL DEFAULT false
+);
+
+CREATE UNIQUE INDEX ON &quot;ArtworkTags&quot; (&quot;artworkId&quot;, &quot;tag&quot;);
+
+ALTER TABLE &quot;ArtworkFiles&quot; ADD FOREIGN KEY (&quot;artworkId&quot;) REFERENCES &quot;Artwork&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;ArtworkFiles&quot; ADD FOREIGN KEY (&quot;artworkFileId&quot;) REFERENCES &quot;File&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;ArtworkTags&quot; ADD FOREIGN KEY (&quot;artworkId&quot;) REFERENCES &quot;Artwork&quot; (&quot;id&quot;);
+
+ALTER TABLE &quot;ArtworkFileUploadTokens&quot; ADD FOREIGN KEY (&quot;fileId&quot;) REFERENCES &quot;File&quot; (&quot;id&quot;);
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../api/artworkFile/remove/" class="btn btn-neutral float-left" title="POST artworkFile/remove"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../users/" class="btn btn-neutral float-right" title="Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../api/artworkFile/remove/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../users/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

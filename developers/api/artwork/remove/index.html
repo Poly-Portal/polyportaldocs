@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>POST artwork/remove - Poly Portal Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "POST artwork/remove";
+        var mkdocs_page_input_path = "developers/api/artwork/remove.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Poly Portal Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">PolyPortal User Manual and Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Administrators</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../administrators/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../../">Developer Documentation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Api</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">API Documentation</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Artwork</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../create/">POST artwork/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../details/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../list/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">POST artwork/remove</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description-and-usage">Description and Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#key-information">Key information</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#required-arguments">Required Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-arguments">Optional Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-responses">Example Responses</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#errors">Errors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../update/">POST artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >artworkFile</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../artworkFile/create/">POST artworkFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artworkFile/remove/">POST artworkFile/remove</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Database</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../database/tables/">Database Tables</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Users</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../users/">Index</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Poly Portal Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developers</li>
+          <li class="breadcrumb-item">Api</li>
+          <li class="breadcrumb-item">Artwork</li>
+      <li class="breadcrumb-item active">POST artwork/remove</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="post-artworkremove"><code>POST</code> artwork/remove</h1>
+<h2 id="description-and-usage">Description and Usage</h2>
+<p>Remove an artwork, preventing access to it. The artwork will still be preserved on disk. Optionally removes associated files (the default behavior is to remove). On success, a list of orphaned files will be returned (if no files were orphaned, such as if they were all removed, an empty list is returned).</p>
+<p><strong>Arguments must be sent in the message body as valid JSON.</strong></p>
+<h2 id="key-information">Key information</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method</td>
+<td><code>POST</code></td>
+</tr>
+<tr>
+<td>Token</td>
+<td>User token</td>
+</tr>
+<tr>
+<td>HTTP content type</td>
+<td><code>application/json</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="required-arguments">Required Arguments</h2>
+<hr />
+<h3 id="file"><code>file</code></h3>
+<p>The artwork to be removed. The user must have permissions over the artwork.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;artworkID&quot;:9785
+}
+</code></pre>
+<p><strong>Allowed values:</strong> An artwork ID.</p>
+<hr />
+<h2 id="optional-arguments">Optional Arguments</h2>
+<hr />
+<h3 id="removefiles"><code>removeFiles</code></h3>
+<p>If the files associated with the artwork should also be removed. The function is equivalent to <a href="../../artworkFile/remove/"><code>artworkFile/remove</code></a> Default = <code>true</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;removeFiles&quot;:false
+}
+</code></pre>
+<p><strong>Allowed values:</strong> <code>true</code> or <code>false</code>.</p>
+<hr />
+<h2 id="example-responses">Example Responses</h2>
+<h3 id="on-success">On Success</h3>
+<p><strong>Request:</strong> <code>POST artwork/remove</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;artworkID&quot;:9785,
+  &quot;removeartworkFiles&quot;:false
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:true,
+  &quot;orphanedFiles&quot;:[
+    {
+      &quot;sha256&quot;:&quot;5e77061a9b955ac03d9a574a8a68d8a58005949fa4fdd3d9e38dbd263028ffe8&quot;,
+      &quot;extension&quot;:&quot;obj&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="on-error">On Error</h3>
+<p><strong>Request:</strong> <code>POST artwork/remove</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;artworkID&quot;:&quot;should be an integer&quot;,
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:false,
+  &quot;error&quot;:&quot;invalidArgument&quot;,
+  &quot;errorMessage&quot;:&quot;Parameter 'artworkID' had an invalid value&quot;
+}
+</code></pre>
+<p>git </p>
+<h2 id="errors">Errors</h2>
+<p>The following list may not be exhaustive. Callers should always check the <code>ok</code> parameter of the JSON.</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessDenied</code></td>
+<td>Access to the specified resource is denied.</td>
+</tr>
+<tr>
+<td><code>tokenExpired</code></td>
+<td>The token has expired.</td>
+</tr>
+<tr>
+<td><code>tokenMissing</code></td>
+<td>No token was provided.</td>
+</tr>
+<tr>
+<td><code>unavailable</code></td>
+<td>The service is temporarily unavailable.</td>
+</tr>
+<tr>
+<td><code>internalError</code></td>
+<td>The request could not be completed due to an internal error. It is possible some of the request was carried out.</td>
+</tr>
+<tr>
+<td><code>invalidContentType</code></td>
+<td>The HTTP content type header was set incorrectly. It must be <code>application/JSON</code>.</td>
+</tr>
+<tr>
+<td><code>invalidArgument</code></td>
+<td>One or more of the arguments had an invalid or illegal value.</td>
+</tr>
+<tr>
+<td><code>unknownArgument</code></td>
+<td>One or more arguments were unknown.</td>
+</tr>
+<tr>
+<td><code>missingRequiredArgument</code></td>
+<td>One or more of the required arguments was missing.</td>
+</tr>
+<tr>
+<td><code>badJSON</code></td>
+<td>The JSON provided could not be parsed.</td>
+</tr>
+<tr>
+<td><code>noSuchArtwork</code></td>
+<td>There was no artwork matching the reference or the user does not have permission to access that artwork.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../list/" class="btn btn-neutral float-left" title="GET artwork/list"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../update/" class="btn btn-neutral float-right" title="POST artwork/update">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../list/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../update/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

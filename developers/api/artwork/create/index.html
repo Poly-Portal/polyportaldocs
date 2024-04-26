@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>POST artwork/create - Poly Portal Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "POST artwork/create";
+        var mkdocs_page_input_path = "developers/api/artwork/create.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Poly Portal Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">PolyPortal User Manual and Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Administrators</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../administrators/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../../">Developer Documentation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Api</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">API Documentation</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Artwork</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">POST artwork/create</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description-and-usage">Description and Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#key-information">Key information</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#required-arguments">Required Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-arguments">Optional Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-responses">Example Responses</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#errors">Errors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../details/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../list/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../remove/">POST artwork/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../update/">POST artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >artworkFile</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../artworkFile/create/">POST artworkFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artworkFile/remove/">POST artworkFile/remove</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Database</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../database/tables/">Database Tables</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Users</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../users/">Index</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Poly Portal Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developers</li>
+          <li class="breadcrumb-item">Api</li>
+          <li class="breadcrumb-item">Artwork</li>
+      <li class="breadcrumb-item active">POST artwork/create</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="post-artworkcreate"><code>POST</code> artwork/create</h1>
+<h2 id="description-and-usage">Description and Usage</h2>
+<p>Creates an artwork, linking files to it and giving them a joint title and description. Will return the ID of the new artwork upon success.</p>
+<p><strong>Arguments must be sent in the message body as valid JSON.</strong></p>
+<h2 id="key-information">Key information</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method</td>
+<td><code>POST</code></td>
+</tr>
+<tr>
+<td>Token</td>
+<td>User token</td>
+</tr>
+<tr>
+<td>HTTP content type</td>
+<td><code>application/json</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="required-arguments">Required Arguments</h2>
+<hr />
+<h3 id="title"><code>title</code></h3>
+<p>Specifies the title of the artwork.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;title&quot;:&quot;Fly Me to the Moon&quot;
+}
+</code></pre>
+<p><strong>Allowed values:</strong> any string.</p>
+<hr />
+<h3 id="files"><code>files</code></h3>
+<p>Specifies the artwork files included in this artwork. The user making the request must have permission to use the files.</p>
+<p>The purpose of the file must also be specified, it may be a model, texture, material, thumbnail or 'other' file. At least one model must be specified. Other fields (<code>textures</code>, <code>materials</code>, <code>thumbnails</code>, and <code>other</code>) may be omitted.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-json">{
+  &quot;files&quot;:{
+    &quot;models&quot;:[
+      &quot;c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243&quot;
+    ],
+    &quot;textures&quot;:[
+      &quot;2f33b1f6e25d5d0ded190b8a70ae253c6112c834b3b45640236452b57811b4e7&quot;,
+      &quot;eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12&quot;
+    ],
+    &quot;materials&quot;:[
+      &quot;eca0f1c7112438a1bd2f6ccdb433e8138662d6b406425dd48228ef25c14c0a12&quot;
+    ],
+    &quot;thumbnails&quot;:[
+      &quot;1f33b7baff0ec4b46a508deb9db1c6f5844de78205935b54d7bb7e45ec1ac30c&quot;
+    ],
+    &quot;other&quot;:[
+      &quot;7112026d192c74cf7fb325dd5f0ad1d603d0689faebee84fd6a6babf0a3b6f7f&quot;
+    ]
+  }
+}
+</code></pre>
+<p><strong>Example 2:</strong></p>
+<pre><code class="language-json">{
+  &quot;files&quot;:{
+    &quot;models&quot;:[
+      &quot;c7cf0b3ec6b78d30329ea4bf65f56121b0cf8f05f1b68a3d259b7cd00e113243&quot;
+    ]
+  }
+}
+</code></pre>
+<p><strong>Allowed values:</strong> A list of valid file references that are not used in other artworks and are the user has permission to use. Additional restrictions may be placed on what files may be used for a specific purpose. For example, a JPEG is not a model.</p>
+<hr />
+<h2 id="optional-arguments">Optional Arguments</h2>
+<p>None.</p>
+<hr />
+<h3 id="description"><code>description</code></h3>
+<p>Specifies the description of the artwork. The default description is <code>""</code> (empty string).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+    &quot;description&quot;:&quot;I worked really hard on this !11!!1!&quot;
+}
+</code></pre>
+<p><strong>Allowed values:</strong> any string.</p>
+<hr />
+<h3 id="tags"><code>tags</code></h3>
+<p>Specifies the tags for the artwork. The default is to have no tags.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-json">{
+  &quot;tags&quot;:[
+    &quot;wildlife&quot;,
+    &quot;animals&quot;,
+    &quot;nature&quot;
+  ]
+}
+</code></pre>
+<p><strong>Allowed values:</strong> A list of strings.</p>
+<hr />
+<h2 id="example-responses">Example Responses</h2>
+<h3 id="on-success">On Success</h3>
+<p><strong>Request:</strong> <code>POST artwork/create</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;title&quot;:&quot;WALL-E&quot;,
+  &quot;description&quot;:&quot;EVAAAAAA!&quot;,
+  &quot;files&quot;:{
+    &quot;models&quot;:[
+      &quot;3366fd48dc0860585d8c11e7262168b54649d3bb1d3f62c2b6e79597a21ca9d2&quot;
+    ]
+  },
+  &quot;tags&quot;:[
+    &quot;robot&quot;,
+    &quot;movies&quot;
+  ]
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:true,
+  &quot;artworkID&quot;:5475
+}
+</code></pre>
+<h3 id="on-error">On Error</h3>
+<p><strong>Request:</strong> <code>POST artwork/create</code></p>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;title&quot;:&quot;The textures field contains duplicates.&quot;,
+  &quot;description&quot;:&quot;It will result in an error.&quot;,
+  &quot;files&quot;:{
+    &quot;models&quot;:[
+      &quot;a5cfb7e8c5cc4a07081885f06de2606c0bd3de8db8ebf49b32681679195e82bc&quot;
+    ],
+    &quot;textures&quot;:[
+      &quot;fd168422daf7f4017039ac8c60e5cab64bc3707134d554689f2eec2a7dfa1795&quot;,
+      &quot;fd168422daf7f4017039ac8c60e5cab64bc3707134d554689f2eec2a7dfa1795&quot;
+    ]
+  }
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:false,
+  &quot;error&quot;:&quot;duplicateFile&quot;,
+  &quot;errorMessage&quot;:&quot;A file was included in the artwork more than once.&quot;
+}
+</code></pre>
+<h2 id="errors">Errors</h2>
+<p>The following list may not be exhaustive. Callers should always check the <code>ok</code> parameter of the JSON.</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessDenied</code></td>
+<td>Access to the specified resource is denied.</td>
+</tr>
+<tr>
+<td><code>tokenExpired</code></td>
+<td>The token has expired.</td>
+</tr>
+<tr>
+<td><code>tokenMissing</code></td>
+<td>No token was provided.</td>
+</tr>
+<tr>
+<td><code>unavailable</code></td>
+<td>The service is temporarily unavailable.</td>
+</tr>
+<tr>
+<td><code>internalError</code></td>
+<td>The request could not be completed due to an internal error. It is possible some of the request was carried out.</td>
+</tr>
+<tr>
+<td><code>invalidContentType</code></td>
+<td>The HTTP content type header was set incorrectly. It must be <code>application/JSON</code>.</td>
+</tr>
+<tr>
+<td><code>invalidArgument</code></td>
+<td>One or more of the arguments had an invalid or illegal value.</td>
+</tr>
+<tr>
+<td><code>unknownArgument</code></td>
+<td>One or more arguments were unknown.</td>
+</tr>
+<tr>
+<td><code>missingRequiredArgument</code></td>
+<td>One or more of the required arguments was missing.</td>
+</tr>
+<tr>
+<td><code>badJSON</code></td>
+<td>The JSON provided could not be parsed.</td>
+</tr>
+<tr>
+<td><code>noSuchFile</code></td>
+<td>There was no file matching the reference or the user does not have permission to access that file.</td>
+</tr>
+<tr>
+<td><code>duplicateFile</code></td>
+<td>A file was included in the artwork more than once.</td>
+</tr>
+<tr>
+<td><code>unsuitableFile</code></td>
+<td>A file was specified for an unsuitable purpose (e.g. an image used as a model).</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../" class="btn btn-neutral float-left" title="API Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../details/" class="btn btn-neutral float-right" title="GET artwork/list">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../details/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

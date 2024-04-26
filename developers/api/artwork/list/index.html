@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>GET artwork/list - Poly Portal Documentation</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GET artwork/list";
+        var mkdocs_page_input_path = "developers/api/artwork/list.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> Poly Portal Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">PolyPortal User Manual and Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Administrators</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../administrators/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../../">Developer Documentation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Api</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../">API Documentation</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Artwork</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../create/">POST artwork/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../details/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">GET artwork/list</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#description-and-usage">Description and Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#key-information">Key information</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#required-arguments">Required Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#optional-arguments">Optional Arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-responses">Example Responses</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#errors">Errors</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../remove/">POST artwork/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../update/">POST artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >artworkFile</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../artworkFile/create/">POST artworkFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../artworkFile/remove/">POST artworkFile/remove</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Database</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../database/tables/">Database Tables</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Users</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../users/">Index</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">Poly Portal Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developers</li>
+          <li class="breadcrumb-item">Api</li>
+          <li class="breadcrumb-item">Artwork</li>
+      <li class="breadcrumb-item active">GET artwork/list</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="get-artworklist"><code>GET</code> artwork/list</h1>
+<h2 id="description-and-usage">Description and Usage</h2>
+<p>Returns a paginated list of artworks in a specified sort order. The list can be additionally filtered using optional search parameters. </p>
+<p><strong>Arguments must be passed as URL parameters.</strong></p>
+<h2 id="key-information">Key information</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Method</td>
+<td><code>GET</code></td>
+</tr>
+<tr>
+<td>Token</td>
+<td>User token</td>
+</tr>
+<tr>
+<td>HTTP content type</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="required-arguments">Required Arguments</h2>
+<p>None.</p>
+<h2 id="optional-arguments">Optional Arguments</h2>
+<hr />
+<h3 id="sortorder"><code>sortOrder</code></h3>
+<p>Specifies the order that artworks should be returned in, such as in order of creation. Default = <code>downloads</code>.</p>
+<p><strong>Example:</strong>
+<code>artwork/list?sortOrder=downloads</code></p>
+<p><strong>Allowed values:</strong></p>
+<ul>
+<li><code>downloads</code>: sort in order of downloads.</li>
+<li><code>views</code>: sort in order of views.</li>
+<li><code>lexicographical</code>: sort in lexicographical (alphabetical) order.</li>
+<li><code>uploadDate</code>: sort by most recently uploaded.</li>
+</ul>
+<hr />
+<h3 id="sortdescending"><code>sortDescending</code></h3>
+<p>Specifies if the sort order should be descending (<code>true</code>) or ascending (<code>false</code>). Default = <code>true</code>.</p>
+<p><strong>Example:</strong>
+<code>artwork/list?sortDescending=false</code></p>
+<p><strong>Allowed values:</strong> <code>true</code> or <code>false</code></p>
+<hr />
+<h3 id="pagesize"><code>pageSize</code></h3>
+<p>How many results should be returned on a page. Default is 25.</p>
+<p><strong>Example:</strong>
+<code>artwork/list?pageSize=50</code></p>
+<p><strong>Allowed values:</strong> Positive integers 1 &lt;= x &lt;= 100.</p>
+<hr />
+<h3 id="page"><code>page</code></h3>
+<p>Which page to return, relating to pagination. Pages start at 1. Default is 1.</p>
+<p><strong>Example:</strong>
+<code>artwork/list?page=2</code></p>
+<p><strong>Allowed values:</strong> Positive integers 1 or greater.</p>
+<hr />
+<h3 id="fileextension"><code>fileExtension</code></h3>
+<p>Only artworks with the specified file extension will be returned. <strong>The file extension should not have a dot (.) at the front.</strong></p>
+<p><strong>Example:</strong>
+<code>artwork/list?fileExtension=fbx</code></p>
+<p><strong>Allowed values:</strong> A file extension without a preceding dot.</p>
+<hr />
+<h3 id="title"><code>title</code></h3>
+<p>Only artworks with a title exactly matching the query string will be returned. </p>
+<p><strong>Example:</strong>
+<code>artwork/list?title=Zebra</code></p>
+<p><strong>Allowed values:</strong> Any non empty string</p>
+<hr />
+<h3 id="uploadedbefore"><code>uploadedBefore</code></h3>
+<p>Only artworks uploaded before the specified timestamp will be returned. </p>
+<p><strong>Example:</strong>
+<code>artwork/list?uploadedBefore=1694085155</code></p>
+<p><strong>Allowed values:</strong> UNIX timestamp in integer seconds.</p>
+<hr />
+<h3 id="uploadedafter"><code>uploadedAfter</code></h3>
+<p>Only artworks uploaded after the specified timestamp will be returned. </p>
+<p><strong>Example:</strong>
+<code>artwork/list?uploadedAfter=1694085155</code></p>
+<p><strong>Allowed values:</strong> UNIX timestamp in integer seconds.</p>
+<hr />
+<h3 id="tags"><code>tags</code></h3>
+<p>Specifies the tags that should be matched. See the <code>tagMatchingStrategy</code> parameter to select if results must match either all of the tags or just one or more (defaults to any).</p>
+<p><strong>Example (specifies "animals", "cars", and "music"):</strong>
+<code>artwork/list?tags=animals&amp;tags=cars&amp;tags=music</code></p>
+<p><strong>Allowed values:</strong> One or more none empty strings.</p>
+<hr />
+<h3 id="tagmatchingstrategy"><code>tagMatchingStrategy</code></h3>
+<p>Specifies the matching criteria for tags. If this parameter is used you must also specify the <code>tags</code> parameter.</p>
+<ul>
+<li><code>all</code>: Will only return artworks that have all of the tags specified</li>
+<li><code>any</code>: Will only return artworks that have at least one of the tags specified.</li>
+</ul>
+<p>Default = <code>any</code>.</p>
+<p><strong>Example:</strong> <code>artwork/list?tagMatchingStrategy=all</code></p>
+<p><strong>Allowed values:</strong> <code>any</code> or <code>all</code>.</p>
+<hr />
+<h2 id="example-responses">Example Responses</h2>
+<h3 id="on-success">On Success</h3>
+<p><strong>Query:</strong> <code>artwork/list?pageSize=3&amp;page=2&amp;sortOrder=lexicographical</code></p>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:true,
+  &quot;pageSize&quot;:3,
+  &quot;page&quot;:1,
+  &quot;lastPage&quot;:5,
+  &quot;artworks&quot;:[
+    {
+      &quot;id&quot;:&quot;21&quot;,
+      &quot;title&quot;:&quot;Nation still.&quot;,
+      &quot;downloads&quot;:4037,
+      &quot;views&quot;:750,
+      &quot;createdAt&quot;:1369539861,
+      &quot;files&quot;:{
+        &quot;models&quot;:[
+
+        ],
+        &quot;textures&quot;:[
+          {
+            &quot;fileId&quot;:&quot;52&quot;,
+            &quot;fileName&quot;:&quot;71&quot;,
+            &quot;fileExtension&quot;:&quot;glb&quot;,
+            &quot;signedURL&quot;:null,
+            &quot;signedURLExpiryTimeSeconds&quot;:null
+          }
+        ],
+        &quot;materials&quot;:[
+
+        ],
+        &quot;thumbnails&quot;:[
+          {
+            &quot;fileId&quot;:&quot;95&quot;,
+            &quot;fileName&quot;:&quot;56&quot;,
+            &quot;fileExtension&quot;:&quot;fbx&quot;,
+            &quot;signedURL&quot;:null,
+            &quot;signedURLExpiryTimeSeconds&quot;:null
+          }
+        ],
+        &quot;other&quot;:[
+
+        ]
+      },
+      &quot;tags&quot;:[
+        &quot;Member.&quot;,
+        &quot;Same.&quot;
+      ]
+    },
+    {
+      &quot;id&quot;:&quot;20&quot;,
+      &quot;title&quot;:&quot;Fish magazine.&quot;,
+      &quot;downloads&quot;:2837,
+      &quot;views&quot;:4072,
+      &quot;createdAt&quot;:1075818863,
+      &quot;files&quot;:{
+        &quot;models&quot;:[
+          {
+            &quot;fileId&quot;:&quot;34&quot;,
+            &quot;fileName&quot;:&quot;88&quot;,
+            &quot;fileExtension&quot;:&quot;glb&quot;,
+            &quot;signedURL&quot;:null,
+            &quot;signedURLExpiryTimeSeconds&quot;:null
+          }
+        ],
+        &quot;textures&quot;:[
+
+        ],
+        &quot;materials&quot;:[
+
+        ],
+        &quot;thumbnails&quot;:[
+
+        ],
+        &quot;other&quot;:[
+
+        ]
+      },
+      &quot;tags&quot;:[
+        &quot;Alone.&quot;,
+        &quot;More.&quot;
+      ]
+    },
+    {
+      &quot;id&quot;:&quot;26&quot;,
+      &quot;title&quot;:&quot;Alone.&quot;,
+      &quot;downloads&quot;:61,
+      &quot;views&quot;:4268,
+      &quot;createdAt&quot;:72198176,
+      &quot;files&quot;:{
+        &quot;models&quot;:[
+
+        ],
+        &quot;textures&quot;:[
+          {
+            &quot;fileId&quot;:&quot;69&quot;,
+            &quot;fileName&quot;:&quot;25&quot;,
+            &quot;fileExtension&quot;:&quot;fbx&quot;,
+            &quot;signedURL&quot;:null,
+            &quot;signedURLExpiryTimeSeconds&quot;:null
+          }
+        ],
+        &quot;materials&quot;:[
+
+        ],
+        &quot;thumbnails&quot;:[
+          {
+            &quot;fileId&quot;:&quot;46&quot;,
+            &quot;fileName&quot;:&quot;84&quot;,
+            &quot;fileExtension&quot;:&quot;glb&quot;,
+            &quot;signedURL&quot;:null,
+            &quot;signedURLExpiryTimeSeconds&quot;:null
+          }
+        ],
+        &quot;other&quot;:[
+
+        ]
+      },
+      &quot;tags&quot;:[
+
+      ]
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li>
+<p>There is no guarantee that the number of artworks returned will be equal to the page size. </p>
+</li>
+<li>
+<p>Successful queries will always return at least one artwork.</p>
+</li>
+<li>
+<p>The order of files is guaranteed to be the same across requests.</p>
+</li>
+</ul>
+<h3 id="on-error">On Error</h3>
+<p><strong>Query:</strong> <code>artwork/list?sortOrder=WRONG</code></p>
+<p><strong>Result:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:false,
+  &quot;error&quot;:&quot;invalidParameterValue&quot;,
+  &quot;errorMessage&quot;:&quot;Parameter 'sortOrder' had an invalid value.&quot;
+}
+</code></pre>
+<h2 id="errors">Errors</h2>
+<p>The following list may not be exhaustive. Callers should always check the <code>ok</code> parameter of the JSON.</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accessDenied</code></td>
+<td>Access to the specified resource is denied.</td>
+</tr>
+<tr>
+<td><code>tokenExpired</code></td>
+<td>The token has expired.</td>
+</tr>
+<tr>
+<td><code>tokenMissing</code></td>
+<td>No token was provided.</td>
+</tr>
+<tr>
+<td><code>unavailable</code></td>
+<td>The service is temporarily unavailable.</td>
+</tr>
+<tr>
+<td><code>internalError</code></td>
+<td>The request could not be completed due to an internal error. It is possible some of the request was carried out.</td>
+</tr>
+<tr>
+<td><code>noArtworksFound</code></td>
+<td>No artworks were found that matched the query.</td>
+</tr>
+<tr>
+<td><code>pageLimitExceeded</code></td>
+<td>The page specified is greater than the total amount of pages at the given page size.</td>
+</tr>
+<tr>
+<td><code>invalidArgument</code></td>
+<td>One or more of the arguments had an invalid or illegal value.</td>
+</tr>
+<tr>
+<td><code>unknownArgument</code></td>
+<td>One or more arguments were unknown.</td>
+</tr>
+<tr>
+<td><code>missingRequiredArgument</code></td>
+<td>One or more of the required arguments was missing.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../details/" class="btn btn-neutral float-left" title="GET artwork/list"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../remove/" class="btn btn-neutral float-right" title="POST artwork/remove">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../details/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../remove/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

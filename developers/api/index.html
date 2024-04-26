@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>API Documentation - Poly Portal Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "API Documentation";
+        var mkdocs_page_input_path = "developers/api/index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Poly Portal Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">PolyPortal User Manual and Documentation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Administrators</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../administrators/">Index</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Developers</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Developer Documentation</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Api</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">API Documentation</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#get-requests">GET Requests</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#post-requests-excluding-file-upload">POST Requests (Excluding File Upload)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#post-request-file-upload-only">POST Request (File Upload Only)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#important-terms-and-nomenclature">Important Terms and Nomenclature.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#http-response-codes-and-error-handling">HTTP Response Codes and Error Handling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tokens-and-the-authorization-header">Tokens and The Authorization Header</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-uploads">File Uploads</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#endpoints">Endpoints</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Artwork</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/create/">POST artwork/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/details/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/list/">GET artwork/list</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/remove/">POST artwork/remove</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="artwork/update/">POST artwork/update</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >artworkFile</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="artworkFile/create/">POST artworkFile/create</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="artworkFile/remove/">POST artworkFile/remove</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Database</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../database/tables/">Database Tables</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Users</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../users/">Index</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Poly Portal Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Developers</li>
+          <li class="breadcrumb-item">Api</li>
+      <li class="breadcrumb-item active">API Documentation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-documentation">API Documentation</h1>
+<p>Poly Portal uses a REST style API to communicate between server and client. Outbound content (from the server to the client) is retrieved via <code>GET</code> request and inbound content (from the client to the server) is delivered via a <code>POST</code> request.</p>
+<ul>
+<li>There is additional complexity around file uploads. This is explained in the relevant sections.</li>
+</ul>
+<h2 id="overview">Overview</h2>
+<h3 id="get-requests"><code>GET</code> Requests</h3>
+<p><code>GET</code> requests accept url parameters and returns JSON. Example URL parameter: <code>www.abc.com/page?key1=value1&amp;key2=value2</code>.</p>
+<p>A valid token must be provided in the HTTP <code>Authorization</code> header.</p>
+<h3 id="post-requests-excluding-file-upload">POST Requests (Excluding File Upload)</h3>
+<p><code>POST</code> accepts JSON bodies as an input and will return JSON.</p>
+<p>The HTTP <code>Content-type</code> header <strong>must</strong> be set to <code>application/json</code>.</p>
+<p>A valid user token must be provided in the HTTP <code>Authorization</code> header.</p>
+<h3 id="post-request-file-upload-only">POST Request (File Upload Only)</h3>
+<p><code>POST</code> requests for file uploads <strong>must</strong> have the HTTP <code>Content-type</code> header set to <code>multipart/form-data</code></p>
+<p>A special file upload token must be provided in the HTTP <code>Authorization</code> header. This token is unique to the file being uploaded.</p>
+<h2 id="important-terms-and-nomenclature">Important Terms and Nomenclature.</h2>
+<ul>
+<li>
+<p><strong>Artwork Files</strong>: An artwork file is an individual file used in an artwork. Such files include meshes, textures, materials, and other supporting files..</p>
+</li>
+<li>
+<p><strong>Artworks</strong>: An artwork is a <em>collection</em> of one or more <em>artwork files.</em> One artwork may contain many <em>artwork files.</em> Artworks may also have many versions.</p>
+</li>
+</ul>
+<h2 id="http-response-codes-and-error-handling">HTTP Response Codes and Error Handling</h2>
+<p>Generally, this API does not make use of HTTP response codes. In normal operation, the API will return a HTTP 200 code with a JSON response in the body, regardless of if the request was successful or not.</p>
+<p>Callers may check if a request was successful using the <code>ok</code> field in the attached JSON. On success the <code>ok</code> field will be set to <code>true</code>. On failure the <code>ok</code> field will be set to <code>false</code> and an error code and message will be included.</p>
+<p><strong>An example of a successful response:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:true
+  ... other JSON data ...
+}
+</code></pre>
+<p><strong>An example of a failed response:</strong></p>
+<pre><code class="language-json">{
+  &quot;ok&quot;:false,
+  &quot;error&quot;:&quot;accessDenied&quot;,
+  &quot;errorMessage&quot;:&quot;Access to the specified resource is denied.&quot;
+}
+</code></pre>
+<h2 id="tokens-and-the-authorization-header">Tokens and The Authorization Header</h2>
+<p>There are two types of tokens. To maintain security the tokens must be kept secret. Tokens are included plaintext in the authorization header using the bearer schema, ex: <code>Authorization: Bearer &lt;token&gt;</code>.</p>
+<ul>
+<li><strong>User tokens.</strong> User tokens are issued to users when they log in and are used for most API features. The token uniquely identifies the user.</li>
+<li><strong>File upload tokens</strong>. File upload tokens are issued when uploading a file. When a request is made using a file upload token the token is consumed and another must be generated. See <a href="artworkFile/create/"><code>artworkFile/create</code></a> and <a href="artworkFile/upload.md"><code>artworkFile/upload</code></a> for more information.</li>
+</ul>
+<h2 id="file-uploads">File Uploads</h2>
+<p>The image below gives an overview of the sequence to upload files to Poly Portal.</p>
+<p><img alt="Image" src="fileUpload.png" /></p>
+<h2 id="endpoints">Endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="artwork/list/"><code>artwork/list</code></a></td>
+<td>Get a list of artworks matching search parameters in a specified order.</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="artwork/details/"><code>artwork/details</code></a></td>
+<td>Get more details on a specific artwork.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="artwork/create/"><code>artwork/create</code></a></td>
+<td>Create a new artwork.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="artwork/update/"><code>artwork/update</code></a></td>
+<td>Create a new version of the artwork.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="artwork/remove/"><code>artwork/remove</code></a></td>
+<td>Remove an artwork.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="artworkFile/create/"><code>artworkFile/create</code></a></td>
+<td>Inform the server of your intention to upload a artwork file.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="artworkFile/upload.md"><code>artworkFile/upload</code></a></td>
+<td>Upload a artwork file using the details from <code>artworkFile/create</code>.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="artworkFile/remove/"><code>artworkFile/remove</code></a></td>
+<td>Delete a artwork file.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Developer Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="artwork/create/" class="btn btn-neutral float-right" title="POST artwork/create">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="artwork/create/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
